@@ -217,7 +217,7 @@ I blend market expertise and sustainability passion to craft high-impact marketi
 <div class="max-w-3xl mx-auto">
 <h2 class="text-3xl font-bold mb-6 text-center">Certifications & Courses</h2>
 <ul class="space-y-4">
-li>Project Management - Google</li>
+<li>Project Management - Google</li>
     <li>SQL Data Associate - Data Camp</li>
     <li>Prince 2 Foundation</li>
     <li>Occupational Health and Safety - NEBOSH</li>
