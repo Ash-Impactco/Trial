@@ -59,7 +59,7 @@ I blend market expertise and sustainability passion to craft high-impact marketi
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-center">Experience</h2>
     <ul class="space-y-6">
-
+<ul>
       <li>
         <button onclick="toggle('exp1')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
           Freelance Clean Tech Marketer  (Jan  2025 – Present)
@@ -73,9 +73,11 @@ I blend market expertise and sustainability passion to craft high-impact marketi
           <a href="#crm-cleantech" class="text-blue-600 underline mt-2 block">View CRM Campaign Details</a>
         </div>
       </li>
-
+</ul>
+      <ul>
       <li>
         <button onclick="toggle('exp2')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
+          
           CUSTOMER SUCCESS & MARKETING SPECIALIST - Scores & Levels, Porto (Oct 2023 – Dec 2024)
         </button>
         <div id="exp2" class="hidden mt-2 ml-4">
@@ -98,8 +100,9 @@ I blend market expertise and sustainability passion to craft high-impact marketi
           </ul>
         </div>
       </li>
-
+          </ul>
       <li>
+        <ul>
         <button onclick="toggle('exp3')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
           BUSINESS DEVELOPMENT MANAGER (REMOTE) - National Chromatography Inco, Europe (Oct 2022 – May 2024)
         </button>
@@ -113,10 +116,12 @@ I blend market expertise and sustainability passion to craft high-impact marketi
           </ul>
         </div>
       </li>
-
+        </ul>
+           <ul>
       <li>
         <button onclick="toggle('exp4')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
           CLIENT RELATIONSHIP SPECIALIST - Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)
+         
         </button>
         <div id="exp4" class="hidden mt-2 ml-4">
           <ul class="list-disc pl-6">
@@ -126,10 +131,11 @@ I blend market expertise and sustainability passion to craft high-impact marketi
           </ul>
         </div>
       </li>
-
+          </ul>
       <li>
         <button onclick="toggle('exp5')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
           ENVIRONMENTAL CONSULTANT - MGK Aqua Inco, India (Nov 2020 – Aug 2021)
+          <ul>
         </button>
         <div id="exp5" class="hidden mt-2 ml-4">
           <ul class="list-disc pl-6">
@@ -142,10 +148,12 @@ I blend market expertise and sustainability passion to craft high-impact marketi
           </ul>
         </div>
       </li>
-
+          </ul>
+<ul>
       <li>
         <button onclick="toggle('exp6')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
           PROJECT ASSISTANT - UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)
+      
         </button>
         <div id="exp6" class="hidden mt-2 ml-4">
           <ul class="list-disc pl-6">
