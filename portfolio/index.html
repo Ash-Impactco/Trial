@@ -190,6 +190,65 @@
             margin-bottom: 1.5rem;
             text-align: center;
         }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .category-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        .category-buttons {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .category-button {
+            padding: 2rem 4rem;
+            font-size: 1.5rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            min-width: 300px;
+        }
+
+        .business-button {
+            background: linear-gradient(135deg, var(--business-red) 0%, #C53030 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+        }
+
+        .sustainability-button {
+            background: linear-gradient(135deg, var(--sustainability-blue) 0%, #2C5282 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
+        }
+
+        .category-button:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -254,21 +313,20 @@
         </div>
     </section>
 
-    <!-- Category Buttons Section -->
-    <section class="py-8 bg-gradient-to-r from-blue-50 to-green-50">
+    <!-- Category Section -->
+    <section id="categorySection" class="category-section">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center space-y-4" data-aos="fade-up">
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Explore My Experience</h3>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button onclick="filterExperience('business')" class="btn-business transform hover:scale-105 transition-all duration-300 shadow-md">
-                        <i class="fas fa-chart-line mr-2"></i>
-                        Business Development
-                    </button>
-                    <button onclick="filterExperience('sustainability')" class="btn-sustainability transform hover:scale-105 transition-all duration-300 shadow-md">
-                        <i class="fas fa-leaf mr-2"></i>
-                        Sustainability
-                    </button>
-                </div>
+            <div class="category-buttons" data-aos="fade-up">
+                <button onclick="filterExperience('business')" class="category-button business-button">
+                    <i class="fas fa-chart-line text-3xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Business Development</h3>
+                    <p class="text-sm opacity-80">Explore my business growth journey</p>
+                </button>
+                <button onclick="filterExperience('sustainability')" class="category-button sustainability-button">
+                    <i class="fas fa-leaf text-3xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Sustainability</h3>
+                    <p class="text-sm opacity-80">Discover my environmental initiatives</p>
+                </button>
             </div>
         </div>
     </section>
@@ -602,6 +660,16 @@
         const introVideoPlayer = document.getElementById('introVideoPlayer');
         const introOverlay = document.getElementById('introOverlay');
         const skipIntro = document.getElementById('skipIntro');
+        const categorySection = document.getElementById('categorySection');
+        const experienceSection = document.getElementById('experience');
+        const projectsSection = document.getElementById('projects');
+        const venturesSection = document.getElementById('ventures');
+
+        // Initially hide sections
+        categorySection.style.display = 'none';
+        experienceSection.style.display = 'none';
+        projectsSection.style.display = 'none';
+        venturesSection.style.display = 'none';
 
         // Show overlay after 1 second
         setTimeout(() => {
@@ -611,16 +679,27 @@
         // Handle video end
         introVideoPlayer.addEventListener('ended', () => {
             introVideo.style.display = 'none';
+            categorySection.style.display = 'block';
+            categorySection.classList.add('fade-in');
         });
 
         // Handle skip button
         skipIntro.addEventListener('click', () => {
             introVideo.style.display = 'none';
+            categorySection.style.display = 'block';
+            categorySection.classList.add('fade-in');
         });
 
-        // Your existing filter function
+        // Enhanced filter function
         function filterExperience(category) {
             const experienceItems = document.querySelectorAll('.experience-timeline > div');
+            experienceSection.style.display = 'block';
+            projectsSection.style.display = 'block';
+            venturesSection.style.display = 'block';
+            
+            // Smooth scroll to experience section
+            experienceSection.scrollIntoView({ behavior: 'smooth' });
+
             experienceItems.forEach(item => {
                 const title = item.querySelector('h3').textContent.toLowerCase();
                 const company = item.querySelector('p').textContent.toLowerCase();
