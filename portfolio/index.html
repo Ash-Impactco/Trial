@@ -38,6 +38,100 @@
         }
     </script>
     <style>
+        :root {
+            --primary: #2D3748;
+            --secondary: #4A5568;
+            --accent: #718096;
+            --background: #F7FAFC;
+            --business-red: #E53E3E;
+            --sustainability-blue: #3182CE;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--primary);
+        }
+
+        .intro-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1000;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intro-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .intro-overlay.active {
+            opacity: 1;
+        }
+
+        .skip-intro {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border: 1px solid white;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .skip-intro:hover {
+            background: white;
+            color: black;
+        }
+
+        .business-section {
+            background: linear-gradient(135deg, var(--business-red) 0%, #C53030 100%);
+        }
+
+        .sustainability-section {
+            background: linear-gradient(135deg, var(--sustainability-blue) 0%, #2C5282 100%);
+        }
+
+        .category-button {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .category-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .business-button {
+            background: linear-gradient(135deg, var(--business-red) 0%, #C53030 100%);
+        }
+
+        .sustainability-button {
+            background: linear-gradient(135deg, var(--sustainability-blue) 0%, #2C5282 100%);
+        }
+
         .btn-business {
             background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
             color: #2C3E50;
@@ -98,7 +192,21 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="min-h-screen">
+    <!-- Intro Video Section -->
+    <div class="intro-video" id="introVideo">
+        <video id="introVideoPlayer" autoplay muted>
+            <source src="assets/animation/intro.mp4" type="video/mp4">
+        </video>
+        <div class="intro-overlay" id="introOverlay">
+            <div class="text-center text-white">
+                <h1 class="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
+                <p class="text-xl">Exploring Business Development & Sustainability</p>
+            </div>
+        </div>
+        <div class="skip-intro" id="skipIntro">Skip Intro</div>
+    </div>
+
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
         <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
@@ -489,6 +597,28 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+        // Intro Video Handling
+        const introVideo = document.getElementById('introVideo');
+        const introVideoPlayer = document.getElementById('introVideoPlayer');
+        const introOverlay = document.getElementById('introOverlay');
+        const skipIntro = document.getElementById('skipIntro');
+
+        // Show overlay after 1 second
+        setTimeout(() => {
+            introOverlay.classList.add('active');
+        }, 1000);
+
+        // Handle video end
+        introVideoPlayer.addEventListener('ended', () => {
+            introVideo.style.display = 'none';
+        });
+
+        // Handle skip button
+        skipIntro.addEventListener('click', () => {
+            introVideo.style.display = 'none';
+        });
+
+        // Your existing filter function
         function filterExperience(category) {
             const experienceItems = document.querySelectorAll('.experience-timeline > div');
             experienceItems.forEach(item => {
@@ -496,7 +626,6 @@
                 const company = item.querySelector('p').textContent.toLowerCase();
                 
                 if (category === 'business') {
-                    // Business Development category
                     if (company.includes('scores') || 
                         company.includes('nci') || 
                         company.includes('national chromatography') || 
@@ -506,7 +635,6 @@
                         item.style.display = 'none';
                     }
                 } else if (category === 'sustainability') {
-                    // Sustainability category
                     if (company.includes('cleantech') || 
                         company.includes('mgk aqua') || 
                         company.includes('unicef')) {
