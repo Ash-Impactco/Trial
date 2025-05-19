@@ -40,15 +40,14 @@ portfolio/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Ash-Impactco/Trial.git
+git clone https://github.com/Ash-Impactco/portfolio.git
 ```
 
 2. Open `index.html` in your browser to view the website.
 
 ## Deployment
 
-The website is deployed using GitHub Pages. Visit [https://ash-impactco.github.io/Trial](https://ash-impactco.github.io/Trial) to view the live site.
-
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/ash-impactco/portfolio/commits/master)
 ## Contact
 
 - Email: aswinr63@gmail.com
