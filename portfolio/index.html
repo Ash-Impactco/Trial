@@ -70,12 +70,21 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1>Aswin Raj Sivaprakash</h1>
-                <h2>Clean Tech Marketer | Environmental Strategist | CRM Specialist</h2>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Contact Me</a>
-                    <a href="assets/resume.pdf" class="btn btn-secondary" download>Download CV</a>
+            <div class="monitor-container" data-aos="fade-up">
+                <div class="monitor">
+                    <div class="monitor-screen">
+                        <div class="scanline"></div>
+                        <div class="monitor-content">
+                            <div class="typing-text glitch">
+                                <h1>Aswin Raj Sivaprakash</h1>
+                                <h2>Clean Tech Marketer | Environmental Strategist | CRM Specialist</h2>
+                            </div>
+                            <div class="hero-buttons" style="margin-top: 2rem;">
+                                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                                <a href="assets/resume.pdf" class="btn btn-secondary" download>Download CV</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,6 +116,10 @@
                     </div>
                 </div>
             </div>
+            <div class="section-buttons" data-aos="fade-up">
+                <button class="btn btn-business" onclick="filterExperience('business')">Business Development</button>
+                <button class="btn btn-sustainability" onclick="filterExperience('sustainability')">Sustainability</button>
+            </div>
         </div>
     </section>
 
@@ -120,113 +133,73 @@
             <div class="experience-timeline" data-aos="fade-up">
                 <!-- Experience Item 1 -->
                 <div class="bg-white rounded-lg shadow-sm p-6">
-                    <button onclick="toggle('exp1')" class="w-full text-left">
+                    <a href="experience1.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Freelance Clean Tech Marketer</h3>
                         <p class="text-accent mb-4">Cleantech GrowthLab (Jan 2025 – Present)</p>
-                    </button>
-                    <div id="exp1" class="hidden mt-4">
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Designed CRM workflows to nurture leads and improve SQL generation (10× increase).</li>
-                            <li>Sustained 44% average open rate on nurture emails.</li>
-                            <li>Developed digital strategy and content for social campaigns, boosting engagement by 30%.</li>
-                        </ul>
-                        <a href="#crm-cleantech" class="text-primary hover:underline mt-4 block">View CRM Campaign Details</a>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Experience Item 2 -->
                 <div class="bg-white rounded-lg shadow-sm p-6">
-                    <button onclick="toggle('exp2')" class="w-full text-left">
+                    <a href="experience2.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Customer Success & Marketing Specialist</h3>
                         <p class="text-accent mb-4">Scores & Levels, Porto (Oct 2023 – Dec 2024)</p>
-                    </button>
-                    <div id="exp2" class="hidden mt-4">
-                        <h4 class="font-semibold text-gray-700 mb-2">Marketing Collaboration and Promotional Campaigns</h4>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Collaborated with the marketing team to develop data-driven promotional strategies using HubSpot, leading to a 25% increase in customer retention across all regions.</li>
-                            <li>Executed bulk messaging campaigns targeting 10,000+ clients, driving a 15% uplift in player engagement and a 10% increase in deposits.</li>
-                            <li>Oversaw player engagement and retention initiatives, contributing to a 20% overall growth in customer lifetime value across Asian, African, and Brazilian markets.</li>
-                        </ul>
-                        
-                        <h4 class="font-semibold text-gray-700 mt-4 mb-2">Customer Support and Bet Management</h4>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Handled over 100 customer inquiries daily via chat for iGaming platforms like Bet365, Bet Barter, Aposta Real, and Sky247, ensuring timely resolution of betting issues and account management.</li>
-                            <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets, achieving a 95% resolution rate within 24 hours.</li>
-                            <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals, contributing to a seamless user experience across Asian, African, and Brazilian markets.</li>
-                        </ul>
-                        
-                        <h4 class="font-semibold text-gray-700 mt-4 mb-2">VIP Customer Engagement and Telemarketing</h4>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement.</li>
-                            <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions.</li>
-                        </ul>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Experience Item 3 -->
                 <div class="bg-white rounded-lg shadow-sm p-6">
-                    <button onclick="toggle('exp3')" class="w-full text-left">
+                    <a href="experience3.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Business Development Manager (Remote)</h3>
                         <p class="text-accent mb-4">National Chromatography Inco, Europe (Oct 2022 – May 2024)</p>
-                    </button>
-                    <div id="exp3" class="hidden mt-4">
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Acquired consistent new business with well-formulated and executed strategies based on market expertise. Collaborated with sales and business development teams to fulfil bids, RFP and tender under strict timelines. Contributed to bottom line revenue by attaining 80% of sales quota.</li>
-                            <li>Revitalized marketing efforts employing streamlined processes and rebranding initiatives. Prospected and qualified marketing leads from the pharmaceutical industry using Salesforce CRM attaining conversion rates of 13%.</li>
-                            <li>Collaborated with cross-functional teams to create targeted marketing materials for specific industries or clients. Prospected for potential new clients to improve business opportunities and onboarded 50 clients and partners through sales pitch meetings and cold calls.</li>
-                            <li>Amplified international sales by selling pharmaceutical stocks worth $35k across North America and South Asia as a result of extensively researching the import and export movement.</li>
-                            <li>Liaised with directors, R&D team, sales and procurement team, dispatch and management teams through weekly and monthly meetings, regular monitoring and cross-checking with the existing database of customers to ensure consistency in approach.</li>
-                        </ul>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Experience Item 4 -->
                 <div class="bg-white rounded-lg shadow-sm p-6">
-                    <button onclick="toggle('exp4')" class="w-full text-left">
+                    <a href="experience4.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Client Relationship Specialist</h3>
                         <p class="text-accent mb-4">Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)</p>
-                    </button>
-                    <div id="exp4" class="hidden mt-4">
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Inbound Customer Support: Address customer inquiries through phone, email, and chat channels. Diagnose and troubleshoot customer problems while delivering technical assistance. Handle customer grievances effectively and elevate complex matters to the relevant departments. Keep customer records up to date, manage account details, and complete order processing tasks.</li>
-                            <li>Technical Support: Handled issues with payment and reservation along with account setup and email-related queries. Effectively communicate technical information to non-technical customers, providing clear and concise instructions for issue resolution. Consistently met or exceeded SLAs for response and resolution times, contributing to a high level of customer service.</li>
-                            <li>Product Knowledge: Understanding of international travel, including fares and pricing, available resources and travel documentation requirements. 60% of railway bookings should be international. Assist customers with various needs, such as travel changes and special requests, including any necessary problem solving. Review incoming correspondence and materials as needed; prioritize, summarize, and respond in a timely manner.</li>
-                        </ul>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Experience Item 5 -->
                 <div class="bg-white rounded-lg shadow-sm p-6">
-                    <button onclick="toggle('exp5')" class="w-full text-left">
+                    <a href="experience5.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Environmental Consultant</h3>
                         <p class="text-accent mb-4">MGK Aqua Inco, India (Nov 2020 – Aug 2021)</p>
-                    </button>
-                    <div id="exp5" class="hidden mt-4">
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Assembled Detailed Project Reports (DPRs) for sustainability, climate change, energy efficiency and GHG Management projects for BOSCH, PepsiCo, and around 3 textiles and 2 tanning companies.</li>
-                            <li>Executed water treatment projects by analysing BOD, DO, suspended solids, fluorides, chlorides, nitrates, and coliform for more than 10 housing projects and 5 corporate projects.</li>
-                            <li>Assisted in setting up new clarifiers, drinking water setup, rainwater harvesting, acoustic blowers installing an automated wastewater treatment plant.</li>
-                            <li>Charted technical specifications for the preparation of coagulants and flocculants for the treatment of effluent plants. Oversaw awareness training on Solid Waste and E-Waste Management during 5 corporate events in companies under CHIL-SEZ and public events.</li>
-                            <li>Implemented task estimation of sales and number of visits through Agile and Kanban that gave an idea on monthly monitoring of stakeholders and follow-ups to be performed on the upcoming sales.</li>
-                            <li>Assisted outsourced members of the construction team and solved on-site problems & queries during the construction of ETP, thereby delivering the projects on time.</li>
-                        </ul>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Experience Item 6 -->
                 <div class="bg-white rounded-lg shadow-sm p-6">
-                    <button onclick="toggle('exp6')" class="w-full text-left">
+                    <a href="experience6.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Project Assistant</h3>
                         <p class="text-accent mb-4">UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)</p>
-                    </button>
-                    <div id="exp6" class="hidden mt-4">
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Communicated with government officials such as Planning and Implementation officers to report the progress, negotiate budgets for environmental sustainability and GHG Management projects involving the construction, and installation of solar stoves and water pump.</li>
-                            <li>Researched, drafted, and edited executive materials, proposals, and reports, pinpointing areas for enhancement to elevate overall quality. Streamlined water testing by analyzing 63 parameters and integrated solar-powered stoves for over 10,000 tea estate residents encouraging alternatives to conventional usage of coal and scrapwood cooking.</li>
-                            <li>Modernized the preliminary designs for water pumps and beddings in 16 tea estates across Dibrugarh, Assam that provided access to fresh water and usage of honeycomb toilets for efficient use and cost saving.</li>
-                        </ul>
-                    </div>
+                    </a>
                 </div>
+            </div>
+        </div>
+        <div class="company-logos">
+            <h3>Company Logos</h3>
+            <div class="logo-container">
+                <a href="https://www.proclime.world/" target="_blank" rel="noopener">
+                    <img src="assets/Companies/download (7).png" alt="Proclime Logo">
+                </a>
+                <a href="https://windcredible.com/" target="_blank" rel="noopener">
+                    <img src="assets/Companies/1677765123902.jpeg" alt="Windcredible Logo">
+                </a>
+                <a href="https://www.cleantechgrowthlab.com/" target="_blank" rel="noopener">
+                    <img src="assets/Companies/download (6).png" alt="CleanTech GrowthLab Logo">
+                </a>
+                <img src="assets/Companies/download (5).png" alt="Company Logo 4">
+            </div>
+            <h3>Clean Tech Logos</h3>
+            <div class="logo-container">
+                <img src="assets/Clean tech/smoob_logo.jpeg" alt="Clean Tech Logo 1">
+                <img src="assets/Clean tech/download.jpeg" alt="Clean Tech Logo 2">
+                <img src="assets/Clean tech/download (4).png" alt="Clean Tech Logo 3">
+                <img src="assets/Clean tech/download (3).png" alt="Clean Tech Logo 4">
             </div>
         </div>
     </section>
@@ -406,5 +379,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function filterExperience(category) {
+            const experienceItems = document.querySelectorAll('.experience-timeline > div');
+            experienceItems.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                if (category === 'business' && title.includes('business development')) {
+                    item.style.display = 'block';
+                } else if (category === 'sustainability' && title.includes('sustainability')) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html> 
