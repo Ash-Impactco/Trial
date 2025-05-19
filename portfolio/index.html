@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aswin Raj Sivaprakash | Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- CounterUp -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <!-- Waypoints -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Animations CSS -->
+    <link href="assets/css/animations.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C3E50',    // Dark Blue
+                        secondary: '#34495E',  // Slate Blue
+                        accent: '#7F8C8D',     // Subtle Gray
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">Aswin Raj</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#ventures">Ventures</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Aswin Raj Sivaprakash</h1>
+                <h2>Clean Tech Marketer | Environmental Strategist | CRM Specialist</h2>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <a href="assets/resume.pdf" class="btn btn-secondary" download>Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>About</h2>
+                <p>About Me</p>
+            </div>
+            <div class="about-content" data-aos="fade-up">
+                <div class="about-text">
+                    <p>A passionate clean tech marketer and sustainability specialist with 5+ years driving CRM, digital strategy, and ESG communications across global markets. I blend market expertise and sustainability passion to craft high-impact marketing strategies for clean technology and environmental initiatives.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Porto, Portugal</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+351 938816822</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>aswinr63@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Experience</h2>
+                <p>My Experience</p>
+            </div>
+            <div class="experience-timeline" data-aos="fade-up">
+                <!-- Experience Item 1 -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <button onclick="toggle('exp1')" class="w-full text-left">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Freelance Clean Tech Marketer</h3>
+                        <p class="text-accent mb-4">Cleantech GrowthLab (Jan 2025 – Present)</p>
+                    </button>
+                    <div id="exp1" class="hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Designed CRM workflows to nurture leads and improve SQL generation (10× increase).</li>
+                            <li>Sustained 44% average open rate on nurture emails.</li>
+                            <li>Developed digital strategy and content for social campaigns, boosting engagement by 30%.</li>
+                        </ul>
+                        <a href="#crm-cleantech" class="text-primary hover:underline mt-4 block">View CRM Campaign Details</a>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <button onclick="toggle('exp2')" class="w-full text-left">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Customer Success & Marketing Specialist</h3>
+                        <p class="text-accent mb-4">Scores & Levels, Porto (Oct 2023 – Dec 2024)</p>
+                    </button>
+                    <div id="exp2" class="hidden mt-4">
+                        <h4 class="font-semibold text-gray-700 mb-2">Marketing Collaboration and Promotional Campaigns</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Collaborated with the marketing team to develop data-driven promotional strategies using HubSpot, leading to a 25% increase in customer retention across all regions.</li>
+                            <li>Executed bulk messaging campaigns targeting 10,000+ clients, driving a 15% uplift in player engagement and a 10% increase in deposits.</li>
+                            <li>Oversaw player engagement and retention initiatives, contributing to a 20% overall growth in customer lifetime value across Asian, African, and Brazilian markets.</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold text-gray-700 mt-4 mb-2">Customer Support and Bet Management</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Handled over 100 customer inquiries daily via chat for iGaming platforms like Bet365, Bet Barter, Aposta Real, and Sky247, ensuring timely resolution of betting issues and account management.</li>
+                            <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets, achieving a 95% resolution rate within 24 hours.</li>
+                            <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals, contributing to a seamless user experience across Asian, African, and Brazilian markets.</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold text-gray-700 mt-4 mb-2">VIP Customer Engagement and Telemarketing</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement.</li>
+                            <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <button onclick="toggle('exp3')" class="w-full text-left">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Business Development Manager (Remote)</h3>
+                        <p class="text-accent mb-4">National Chromatography Inco, Europe (Oct 2022 – May 2024)</p>
+                    </button>
+                    <div id="exp3" class="hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Acquired consistent new business with well-formulated and executed strategies based on market expertise. Collaborated with sales and business development teams to fulfil bids, RFP and tender under strict timelines. Contributed to bottom line revenue by attaining 80% of sales quota.</li>
+                            <li>Revitalized marketing efforts employing streamlined processes and rebranding initiatives. Prospected and qualified marketing leads from the pharmaceutical industry using Salesforce CRM attaining conversion rates of 13%.</li>
+                            <li>Collaborated with cross-functional teams to create targeted marketing materials for specific industries or clients. Prospected for potential new clients to improve business opportunities and onboarded 50 clients and partners through sales pitch meetings and cold calls.</li>
+                            <li>Amplified international sales by selling pharmaceutical stocks worth $35k across North America and South Asia as a result of extensively researching the import and export movement.</li>
+                            <li>Liaised with directors, R&D team, sales and procurement team, dispatch and management teams through weekly and monthly meetings, regular monitoring and cross-checking with the existing database of customers to ensure consistency in approach.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 4 -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <button onclick="toggle('exp4')" class="w-full text-left">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Client Relationship Specialist</h3>
+                        <p class="text-accent mb-4">Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)</p>
+                    </button>
+                    <div id="exp4" class="hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Inbound Customer Support: Address customer inquiries through phone, email, and chat channels. Diagnose and troubleshoot customer problems while delivering technical assistance. Handle customer grievances effectively and elevate complex matters to the relevant departments. Keep customer records up to date, manage account details, and complete order processing tasks.</li>
+                            <li>Technical Support: Handled issues with payment and reservation along with account setup and email-related queries. Effectively communicate technical information to non-technical customers, providing clear and concise instructions for issue resolution. Consistently met or exceeded SLAs for response and resolution times, contributing to a high level of customer service.</li>
+                            <li>Product Knowledge: Understanding of international travel, including fares and pricing, available resources and travel documentation requirements. 60% of railway bookings should be international. Assist customers with various needs, such as travel changes and special requests, including any necessary problem solving. Review incoming correspondence and materials as needed; prioritize, summarize, and respond in a timely manner.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 5 -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <button onclick="toggle('exp5')" class="w-full text-left">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Environmental Consultant</h3>
+                        <p class="text-accent mb-4">MGK Aqua Inco, India (Nov 2020 – Aug 2021)</p>
+                    </button>
+                    <div id="exp5" class="hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Assembled Detailed Project Reports (DPRs) for sustainability, climate change, energy efficiency and GHG Management projects for BOSCH, PepsiCo, and around 3 textiles and 2 tanning companies.</li>
+                            <li>Executed water treatment projects by analysing BOD, DO, suspended solids, fluorides, chlorides, nitrates, and coliform for more than 10 housing projects and 5 corporate projects.</li>
+                            <li>Assisted in setting up new clarifiers, drinking water setup, rainwater harvesting, acoustic blowers installing an automated wastewater treatment plant.</li>
+                            <li>Charted technical specifications for the preparation of coagulants and flocculants for the treatment of effluent plants. Oversaw awareness training on Solid Waste and E-Waste Management during 5 corporate events in companies under CHIL-SEZ and public events.</li>
+                            <li>Implemented task estimation of sales and number of visits through Agile and Kanban that gave an idea on monthly monitoring of stakeholders and follow-ups to be performed on the upcoming sales.</li>
+                            <li>Assisted outsourced members of the construction team and solved on-site problems & queries during the construction of ETP, thereby delivering the projects on time.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 6 -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <button onclick="toggle('exp6')" class="w-full text-left">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Project Assistant</h3>
+                        <p class="text-accent mb-4">UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)</p>
+                    </button>
+                    <div id="exp6" class="hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Communicated with government officials such as Planning and Implementation officers to report the progress, negotiate budgets for environmental sustainability and GHG Management projects involving the construction, and installation of solar stoves and water pump.</li>
+                            <li>Researched, drafted, and edited executive materials, proposals, and reports, pinpointing areas for enhancement to elevate overall quality. Streamlined water testing by analyzing 63 parameters and integrated solar-powered stoves for over 10,000 tea estate residents encouraging alternatives to conventional usage of coal and scrapwood cooking.</li>
+                            <li>Modernized the preliminary designs for water pumps and beddings in 16 tea estates across Dibrugarh, Assam that provided access to fresh water and usage of honeycomb toilets for efficient use and cost saving.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Projects</h2>
+                <p>My Projects</p>
+            </div>
+            <div class="projects-grid" data-aos="fade-up">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Geothermal Heat Grid Case Study</h3>
+                    <p class="text-accent mb-4">Leeuwarden, NL (Feb 2022 – Apr 2022)</p>
+                    <p class="text-gray-600">Collected qualitative data from 100 respondents on geothermal integration using DESSIN-ESS. Findings published by <a href="https://www.omropfryslan.nl/nl/nieuws/1144457/internationale-studenten-duurzame-aanpak-in-fryslan-is-mogelijk" target="_blank" class="text-primary hover:underline">Omrop</a>.</p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Coral Bleaching Status Study</h3>
+                    <p class="text-accent mb-4">Andaman Islands, India (Dec 2017 – Feb 2018)</p>
+                    <p class="text-gray-600">Identified 1°C SST increase causing symbiosis degradation. Assessed thermal stress via CBAS. Presented findings to ANET, Indian Wildlife Dept. & Coast Guard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventures Section -->
+    <section id="ventures" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Other Ventures</h2>
+                <p>My Ventures</p>
+            </div>
+            <div class="ventures-grid" data-aos="fade-up">
+                <!-- Venture 1 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover-lift">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Intrusive Thoughts</h3>
+                    <p class="text-accent mb-4">Mental Health Awareness Platform</p>
+                    <p class="text-gray-600">
+                        A platform dedicated to raising awareness about mental health and providing resources for those dealing with intrusive thoughts. The platform includes educational content, support resources, and community forums.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="text-primary hover:underline">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Venture 2 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover-lift">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Cloud Kitchen</h3>
+                    <p class="text-accent mb-4">Food Delivery Service</p>
+                    <p class="text-gray-600">
+                        A cloud kitchen operation focusing on sustainable food delivery. The venture emphasizes eco-friendly packaging, local sourcing, and efficient delivery routes to minimize environmental impact.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="text-primary hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Languages</h2>
+                <p>Language Proficiency</p>
+            </div>
+            <div class="languages-content" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Fluent Languages -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary mb-4">Fluent</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">English</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Tamil</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Hindi</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Kannada</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Learning Languages -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary mb-4">Learning</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-language text-blue-500 mr-2"></i>
+                                <span class="text-gray-700">Portuguese (Intermediate)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-language text-blue-500 mr-2"></i>
+                                <span class="text-gray-700">Dutch (Elementary)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-language text-blue-500 mr-2"></i>
+                                <span class="text-gray-700">Bahasa (Learning)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>Get In Touch</p>
+            </div>
+            <div class="contact-content" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-4">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <p class="flex items-center text-gray-600">
+                                <i class="fas fa-map-marker-alt w-6"></i>
+                                Porto, Portugal
+                            </p>
+                            <p class="flex items-center text-gray-600">
+                                <i class="fas fa-phone w-6"></i>
+                                +351 938816822
+                            </p>
+                            <p class="flex items-center text-gray-600">
+                                <i class="fas fa-envelope w-6"></i>
+                                <a href="mailto:aswinr63@gmail.com" class="text-primary hover:underline">aswinr63@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-4">Social Links</h3>
+                        <div class="space-y-4">
+                            <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank" class="flex items-center text-gray-600 hover:text-primary">
+                                <i class="fab fa-linkedin w-6"></i>
+                                LinkedIn Profile
+                            </a>
+                            <a href="https://github.com/Ash-Impactco/Portofolio-2/raw/main/Aswin%20Resume%20.pdf" target="_blank" class="flex items-center text-gray-600 hover:text-primary">
+                                <i class="fas fa-file-alt w-6"></i>
+                                Download Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Aswin Raj Sivaprakash. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 
