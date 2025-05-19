@@ -39,26 +39,30 @@
     </script>
     <style>
         .btn-business {
-            background-color: #E3F2FD;  /* Pale Blue */
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
             color: #2C3E50;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
             font-weight: 600;
             transition: all 0.3s ease;
+            border: 2px solid #90CAF9;
         }
         .btn-business:hover {
-            background-color: #BBDEFB;
+            background: linear-gradient(135deg, #BBDEFB 0%, #90CAF9 100%);
+            transform: translateY(-2px);
         }
         .btn-sustainability {
-            background-color: #E8F5E9;  /* Pale Green */
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
             color: #2C3E50;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
             font-weight: 600;
             transition: all 0.3s ease;
+            border: 2px solid #A5D6A7;
         }
         .btn-sustainability:hover {
-            background-color: #C8E6C9;
+            background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+            transform: translateY(-2px);
         }
         .logo-container {
             display: grid;
@@ -127,20 +131,35 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="monitor-container" data-aos="fade-up">
-                <div class="monitor" style="max-width: 600px; margin: 0 auto;">
+                <div class="monitor" style="max-width: 500px; margin: 0 auto;">
                     <div class="monitor-screen">
                         <div class="scanline"></div>
                         <div class="monitor-content">
                             <div class="typing-text glitch">
-                                <h1 class="text-2xl md:text-3xl">Aswin Raj Sivaprakash</h1>
-                                <h2 class="text-lg md:text-xl">Clean Tech Marketer | Environmental Strategist | CRM Specialist</h2>
-                            </div>
-                            <div class="hero-buttons" style="margin-top: 1rem;">
-                                <a href="#contact" class="btn btn-primary">Contact Me</a>
-                                <a href="assets/Resume/Aswin_Resume.pdf" class="btn btn-secondary" download="Aswin_Raj_Resume.pdf">Download CV</a>
+                                <h1 class="text-xl md:text-2xl">Aswin Raj Sivaprakash</h1>
+                                <h2 class="text-base md:text-lg">Clean Tech Marketer | Environmental Strategist | CRM Specialist</h2>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Buttons Section -->
+    <section class="py-8 bg-gradient-to-r from-blue-50 to-green-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center space-y-4" data-aos="fade-up">
+                <h3 class="text-lg font-semibold text-gray-700 mb-2">Explore My Experience</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="filterExperience('business')" class="btn-business transform hover:scale-105 transition-all duration-300 shadow-md">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Business Development
+                    </button>
+                    <button onclick="filterExperience('sustainability')" class="btn-sustainability transform hover:scale-105 transition-all duration-300 shadow-md">
+                        <i class="fas fa-leaf mr-2"></i>
+                        Sustainability
+                    </button>
                 </div>
             </div>
         </div>
@@ -172,10 +191,6 @@
                     </div>
                 </div>
             </div>
-            <div class="section-buttons" data-aos="fade-up">
-                <button class="btn btn-business" onclick="filterExperience('business')">Business Development</button>
-                <button class="btn btn-sustainability" onclick="filterExperience('sustainability')">Sustainability</button>
-            </div>
         </div>
     </section>
 
@@ -188,7 +203,7 @@
             </div>
             <div class="experience-timeline" data-aos="fade-up">
                 <!-- Experience Item 1 -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="bg-white rounded-lg shadow-sm p-6" data-category="sustainability">
                     <a href="experience1.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Freelance Clean Tech Marketer</h3>
                         <p class="text-accent mb-4">Cleantech GrowthLab (Jan 2025 – Present)</p>
@@ -196,7 +211,7 @@
                 </div>
 
                 <!-- Experience Item 2 -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="bg-white rounded-lg shadow-sm p-6" data-category="business">
                     <a href="experience2.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Customer Success & Marketing Specialist</h3>
                         <p class="text-accent mb-4">Scores & Levels, Porto (Oct 2023 – Dec 2024)</p>
@@ -204,7 +219,7 @@
                 </div>
 
                 <!-- Experience Item 3 -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="bg-white rounded-lg shadow-sm p-6" data-category="business">
                     <a href="experience3.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Business Development Manager (Remote)</h3>
                         <p class="text-accent mb-4">National Chromatography Inco, Europe (Oct 2022 – May 2024)</p>
@@ -212,7 +227,7 @@
                 </div>
 
                 <!-- Experience Item 4 -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="bg-white rounded-lg shadow-sm p-6" data-category="business">
                     <a href="experience4.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Client Relationship Specialist</h3>
                         <p class="text-accent mb-4">Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)</p>
@@ -220,7 +235,7 @@
                 </div>
 
                 <!-- Experience Item 5 -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="bg-white rounded-lg shadow-sm p-6" data-category="sustainability">
                     <a href="experience5.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Environmental Consultant</h3>
                         <p class="text-accent mb-4">MGK Aqua Inco, India (Nov 2020 – Aug 2021)</p>
@@ -228,7 +243,7 @@
                 </div>
 
                 <!-- Experience Item 6 -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="bg-white rounded-lg shadow-sm p-6" data-category="sustainability">
                     <a href="experience6.html" target="_blank" class="block w-full text-left">
                         <h3 class="text-xl font-semibold text-primary mb-2">Project Assistant</h3>
                         <p class="text-accent mb-4">UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)</p>
@@ -478,21 +493,27 @@
             const experienceItems = document.querySelectorAll('.experience-timeline > div');
             experienceItems.forEach(item => {
                 const title = item.querySelector('h3').textContent.toLowerCase();
-                const description = item.querySelector('p').textContent.toLowerCase();
+                const company = item.querySelector('p').textContent.toLowerCase();
                 
-                if (category === 'business' && 
-                    (title.includes('business') || 
-                     title.includes('marketing') || 
-                     title.includes('customer') || 
-                     title.includes('client'))) {
-                    item.style.display = 'block';
-                } else if (category === 'sustainability' && 
-                          (title.includes('environmental') || 
-                           title.includes('clean') || 
-                           title.includes('sustainability'))) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
+                if (category === 'business') {
+                    // Business Development category
+                    if (company.includes('scores') || 
+                        company.includes('nci') || 
+                        company.includes('national chromatography') || 
+                        company.includes('eurail')) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                } else if (category === 'sustainability') {
+                    // Sustainability category
+                    if (company.includes('cleantech') || 
+                        company.includes('mgk aqua') || 
+                        company.includes('unicef')) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
                 }
             });
         }
