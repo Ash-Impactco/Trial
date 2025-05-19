@@ -54,119 +54,105 @@ I blend market expertise and sustainability passion to craft high-impact marketi
 </div>
 </section>
 
-<!-- Experience -->
-<section id="experience" class="py-16 px-4 bg-white text-gray-800">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 text-center">Experience</h2>
-    <ul class="space-y-6">
 <ul>
-      <li>
-        <button onclick="toggle('exp1')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
-          Freelance Clean Tech Marketer  (Jan  2025 – Present)
-        </button>
-        <div id="exp1" class="hidden mt-2 ml-4">
-          <ul class="list-disc pl-6">
-            <li>Designed CRM workflows to nurture leads and improve SQL generation (10× increase).</li>
-            <li>Sustained 44% average open rate on nurture emails.</li>
-            <li>Developed digital strategy and content for social campaigns, boosting engagement by 30%.</li>
-          </ul>
-          <a href="#crm-cleantech" class="text-blue-600 underline mt-2 block">View CRM Campaign Details</a>
-        </div>
-      </li>
-</ul>
-      <ul>
-      <li>
-        <button onclick="toggle('exp2')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
-          
-          CUSTOMER SUCCESS & MARKETING SPECIALIST - Scores & Levels, Porto (Oct 2023 – Dec 2024)
-        </button>
-        <div id="exp2" class="hidden mt-2 ml-4">
-          <h3>Marketing Collaboration and Promotional Campaigns</h3>
-          <ul class="list-disc pl-6">
-            <li>Collaborated with the marketing team to develop data-driven promotional strategies using HubSpot, leading to a 25% increase in customer retention across all regions.</li>
-            <li>Executed bulk messaging campaigns targeting 10,000+ clients, driving a 15% uplift in player engagement and a 10% increase in deposits.</li>
-            <li>Oversaw player engagement and retention initiatives, contributing to a 20% overall growth in customer lifetime value across Asian, African, and Brazilian markets.</li>
-          </ul>
-          <h3>Customer Support and Bet Management</h3>
-          <ul class="list-disc pl-6">
-            <li>Handled over 100 customer inquiries daily via chat for iGaming platforms like Bet365, Bet Barter, Aposta Real, and Sky247, ensuring timely resolution of betting issues and account management.</li>
-            <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets, achieving a 95% resolution rate within 24 hours.</li>
-            <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals, contributing to a seamless user experience across Asian, African, and Brazilian markets.</li>
-          </ul>
-          <h3>VIP Customer Engagement and Telemarketing</h3>
-          <ul class="list-disc pl-6">
-            <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement.</li>
-            <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions.</li>
-          </ul>
-        </div>
-      </li>
-          </ul>
-      <li>
-        <ul>
-        <button onclick="toggle('exp3')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
-          BUSINESS DEVELOPMENT MANAGER (REMOTE) - National Chromatography Inco, Europe (Oct 2022 – May 2024)
-        </button>
-        <div id="exp3" class="hidden mt-2 ml-4">
-          <ul class="list-disc pl-6">
-            <li>Acquired consistent new business with well-formulated and executed strategies based on market expertise. Collaborated with sales and business development teams to fulfil bids, RFP and tender under strict timelines. Contributed to bottom line revenue by attaining 80% of sales quota.</li>
-            <li>Revitalized marketing efforts employing streamlined processes and rebranding initiatives. Prospected and qualified marketing leads from the pharmaceutical industry using Salesforce CRM attaining conversion rates of 13%.</li>
-            <li>Collaborated with cross-functional teams to create targeted marketing materials for specific industries or clients. Prospected for potential new clients to improve business opportunities and onboarded 50 clients and partners through sales pitch meetings and cold calls.</li>
-            <li>Amplified international sales by selling pharmaceutical stocks worth $35k across North America and South Asia as a result of extensively researching the import and export movement.</li>
-            <li>Liaised with directors, R&D team, sales and procurement team, dispatch and management teams through weekly and monthly meetings, regular monitoring and cross-checking with the existing database of customers to ensure consistency in approach.</li>
-          </ul>
-        </div>
-      </li>
-        </ul>
-           <ul>
-      <li>
-        <button onclick="toggle('exp4')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
-          CLIENT RELATIONSHIP SPECIALIST - Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)
-         
-        </button>
-        <div id="exp4" class="hidden mt-2 ml-4">
-          <ul class="list-disc pl-6">
-            <li>Inbound Customer Support: Address customer inquiries through phone, email, and chat channels. Diagnose and troubleshoot customer problems while delivering technical assistance. Handle customer grievances effectively and elevate complex matters to the relevant departments. Keep customer records up to date, manage account details, and complete order processing tasks.</li>
-            <li>Technical Support: Handled issues with payment and reservation along with account setup and email-related queries. Effectively communicate technical information to non-technical customers, providing clear and concise instructions for issue resolution. Consistently met or exceeded SLAs for response and resolution times, contributing to a high level of customer service.</li>
-            <li>Product Knowledge: Understanding of international travel, including fares and pricing, available resources and travel documentation requirements. 60% of railway bookings should be international. Assist customers with various needs, such as travel changes and special requests, including any necessary problem solving. Review incoming correspondence and materials as needed; prioritize, summarize, and respond in a timely manner.</li>
-          </ul>
-        </div>
-      </li>
-          </ul>
-      <li>
-        <button onclick="toggle('exp5')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
-          ENVIRONMENTAL CONSULTANT - MGK Aqua Inco, India (Nov 2020 – Aug 2021)
-          <ul>
-        </button>
-        <div id="exp5" class="hidden mt-2 ml-4">
-          <ul class="list-disc pl-6">
-            <li>Assembled Detailed Project Reports (DPRs) for sustainability, climate change, energy efficiency and GHG Management projects for BOSCH, PepsiCo, and around 3 textiles and 2 tanning companies.</li>
-            <li>Executed water treatment projects by analysing BOD, DO, suspended solids, fluorides, chlorides, nitrates, and coliform for more than 10 housing projects and 5 corporate projects.</li>
-            <li>Assisted in setting up new clarifiers, drinking water setup, rainwater harvesting, acoustic blowers installing an automated wastewater treatment plant.</li>
-            <li>Charted technical specifications for the preparation of coagulants and flocculants for the treatment of effluent plants. Oversaw awareness training on Solid Waste and E-Waste Management during 5 corporate events in companies under CHIL-SEZ and public events.</li>
-            <li>Implemented task estimation of sales and number of visits through Agile and Kanban that gave an idea on monthly monitoring of stakeholders and follow-ups to be performed on the upcoming sales.</li>
-            <li>Assisted outsourced members of the construction team and solved on-site problems & queries during the construction of ETP, thereby delivering the projects on time.</li>
-          </ul>
-        </div>
-      </li>
-          </ul>
-<ul>
-      <li>
-        <button onclick="toggle('exp6')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
-          PROJECT ASSISTANT - UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)
-      
-        </button>
-        <div id="exp6" class="hidden mt-2 ml-4">
-          <ul class="list-disc pl-6">
-            <li>Communicated with government officials such as Planning and Implementation officers to report the progress, negotiate budgets for environmental sustainability and GHG Management projects involving the construction, and installation of solar stoves and water pump.</li>
-            <li>Researched, drafted, and edited executive materials, proposals, and reports, pinpointing areas for enhancement to elevate overall quality. Streamlined water testing by analyzing 63 parameters and integrated solar-powered stoves for over 10,000 tea estate residents encouraging alternatives to conventional usage of coal and scrapwood cooking.</li>
-            <li>Modernized the preliminary designs for water pumps and beddings in 16 tea estates across Dibrugarh, Assam that provided access to fresh water and usage of honeycomb toilets for efficient use and cost saving.</li>
-          </ul>
-        </div>
-      </li>
 
-    </ul>
-  </div>
-</section>
+  <li>
+    <button onclick="toggle('exp1')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
+      Freelance Clean Tech Marketer  (Jan  2025 – Present)
+    </button>
+    <div id="exp1" class="hidden mt-2 ml-4">
+      <ul class="list-disc pl-6">
+        <li>Designed CRM workflows to nurture leads and improve SQL generation (10× increase).</li>
+        <li>Sustained 44% average open rate on nurture emails.</li>
+        <li>Developed digital strategy and content for social campaigns, boosting engagement by 30%.</li>
+      </ul>
+      <a href="#crm-cleantech" class="text-blue-600 underline mt-2 block">View CRM Campaign Details</a>
+    </div>
+  </li>
+
+  <li>
+    <button onclick="toggle('exp2')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
+      CUSTOMER SUCCESS & MARKETING SPECIALIST - Scores & Levels, Porto (Oct 2023 – Dec 2024)
+    </button>
+    <div id="exp2" class="hidden mt-2 ml-4">
+      <h3>Marketing Collaboration and Promotional Campaigns</h3>
+      <ul class="list-disc pl-6">
+        <li>Collaborated with the marketing team to develop data-driven promotional strategies using HubSpot, leading to a 25% increase in customer retention across all regions.</li>
+        <li>Executed bulk messaging campaigns targeting 10,000+ clients, driving a 15% uplift in player engagement and a 10% increase in deposits.</li>
+        <li>Oversaw player engagement and retention initiatives, contributing to a 20% overall growth in customer lifetime value across Asian, African, and Brazilian markets.</li>
+      </ul>
+      <h3>Customer Support and Bet Management</h3>
+      <ul class="list-disc pl-6">
+        <li>Handled over 100 customer inquiries daily via chat for iGaming platforms like Bet365, Bet Barter, Aposta Real, and Sky247, ensuring timely resolution of betting issues and account management.</li>
+        <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets, achieving a 95% resolution rate within 24 hours.</li>
+        <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals, contributing to a seamless user experience across Asian, African, and Brazilian markets.</li>
+      </ul>
+      <h3>VIP Customer Engagement and Telemarketing</h3>
+      <ul class="list-disc pl-6">
+        <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement.</li>
+        <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions.</li>
+      </ul>
+    </div>
+  </li>
+
+  <li>
+    <button onclick="toggle('exp3')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
+      BUSINESS DEVELOPMENT MANAGER (REMOTE) - National Chromatography Inco, Europe (Oct 2022 – May 2024)
+    </button>
+    <div id="exp3" class="hidden mt-2 ml-4">
+      <ul class="list-disc pl-6">
+        <li>Acquired consistent new business with well-formulated and executed strategies based on market expertise. Collaborated with sales and business development teams to fulfil bids, RFP and tender under strict timelines. Contributed to bottom line revenue by attaining 80% of sales quota.</li>
+        <li>Revitalized marketing efforts employing streamlined processes and rebranding initiatives. Prospected and qualified marketing leads from the pharmaceutical industry using Salesforce CRM attaining conversion rates of 13%.</li>
+        <li>Collaborated with cross-functional teams to create targeted marketing materials for specific industries or clients. Prospected for potential new clients to improve business opportunities and onboarded 50 clients and partners through sales pitch meetings and cold calls.</li>
+        <li>Amplified international sales by selling pharmaceutical stocks worth $35k across North America and South Asia as a result of extensively researching the import and export movement.</li>
+        <li>Liaised with directors, R&D team, sales and procurement team, dispatch and management teams through weekly and monthly meetings, regular monitoring and cross-checking with the existing database of customers to ensure consistency in approach.</li>
+      </ul>
+    </div>
+  </li>
+
+  <li>
+    <button onclick="toggle('exp4')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
+      CLIENT RELATIONSHIP SPECIALIST - Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)
+    </button>
+    <div id="exp4" class="hidden mt-2 ml-4">
+      <ul class="list-disc pl-6">
+        <li>Inbound Customer Support: Address customer inquiries through phone, email, and chat channels. Diagnose and troubleshoot customer problems while delivering technical assistance. Handle customer grievances effectively and elevate complex matters to the relevant departments. Keep customer records up to date, manage account details, and complete order processing tasks.</li>
+        <li>Technical Support: Handled issues with payment and reservation along with account setup and email-related queries. Effectively communicate technical information to non-technical customers, providing clear and concise instructions for issue resolution. Consistently met or exceeded SLAs for response and resolution times, contributing to a high level of customer service.</li>
+        <li>Product Knowledge: Understanding of international travel, including fares and pricing, available resources and travel documentation requirements. 60% of railway bookings should be international. Assist customers with various needs, such as travel changes and special requests, including any necessary problem solving. Review incoming correspondence and materials as needed; prioritize, summarize, and respond in a timely manner.</li>
+      </ul>
+    </div>
+  </li>
+
+  <li>
+    <button onclick="toggle('exp5')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
+      ENVIRONMENTAL CONSULTANT - MGK Aqua Inco, India (Nov 2020 – Aug 2021)
+    </button>
+    <div id="exp5" class="hidden mt-2 ml-4">
+      <ul class="list-disc pl-6">
+        <li>Assembled Detailed Project Reports (DPRs) for sustainability, climate change, energy efficiency and GHG Management projects for BOSCH, PepsiCo, and around 3 textiles and 2 tanning companies.</li>
+        <li>Executed water treatment projects by analysing BOD, DO, suspended solids, fluorides, chlorides, nitrates, and coliform for more than 10 housing projects and 5 corporate projects.</li>
+        <li>Assisted in setting up new clarifiers, drinking water setup, rainwater harvesting, acoustic blowers installing an automated wastewater treatment plant.</li>
+        <li>Charted technical specifications for the preparation of coagulants and flocculants for the treatment of effluent plants. Oversaw awareness training on Solid Waste and E-Waste Management during 5 corporate events in companies under CHIL-SEZ and public events.</li>
+        <li>Implemented task estimation of sales and number of visits through Agile and Kanban that gave an idea on monthly monitoring of stakeholders and follow-ups to be performed on the upcoming sales.</li>
+        <li>Assisted outsourced members of the construction team and solved on-site problems & queries during the construction of ETP, thereby delivering the projects on time.</li>
+      </ul>
+    </div>
+  </li>
+
+  <li>
+    <button onclick="toggle('exp6')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
+      PROJECT ASSISTANT - UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)
+    </button>
+    <div id="exp6" class="hidden mt-2 ml-4">
+      <ul class="list-disc pl-6">
+        <li>Communicated with government officials such as Planning and Implementation officers to report the progress, negotiate budgets for environmental sustainability and GHG Management projects involving the construction, and installation of solar stoves and water pump.</li>
+        <li>Researched, drafted, and edited executive materials, proposals, and reports, pinpointing areas for enhancement to elevate overall quality. Streamlined water testing by analyzing 63 parameters and integrated solar-powered stoves for over 10,000 tea estate residents encouraging alternatives to conventional usage of coal and scrapwood cooking.</li>
+        <li>Modernized the preliminary designs for water pumps and beddings in 16 tea estates across Dibrugarh, Assam that provided access to fresh water and usage of honeycomb toilets for efficient use and cost saving.</li>
+      </ul>
+    </div>
+  </li>
+
+</ul>
 
 <section id="internship">
   <h2>Internship</h2>
