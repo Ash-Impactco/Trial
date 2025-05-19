@@ -87,7 +87,7 @@ I blend market expertise and sustainability passion to craft high-impact marketi
         <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets, achieving a 95% resolution rate within 24 hours.</li>
         <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals, contributing to a seamless user experience across Asian, African, and Brazilian markets.</li>
       </ul>
-      <h3>VIP Customer Engagement and Telemarketing</h3>
+      VIP Customer Engagement and Telemarketing
       <ul class="list-disc pl-6">
         <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement.</li>
         <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions.</li>
