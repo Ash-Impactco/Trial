@@ -72,16 +72,16 @@ I blend market expertise and sustainability passion to craft high-impact marketi
 
   <li>
     <button onclick="toggle('exp2')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
-      CUSTOMER SUCCESS & MARKETING SPECIALIST - Scores & Levels, Porto (Oct 2023 – Dec 2024)
+      <h3>CUSTOMER SUCCESS & MARKETING SPECIALIST</h3> - Scores & Levels, Porto (Oct 2023 – Dec 2024)
     </button>
     <div id="exp2" class="hidden mt-2 ml-4">
-      <h3>Marketing Collaboration and Promotional Campaigns</h3>
+      Marketing Collaboration and Promotional Campaigns
       <ul class="list-disc pl-6">
         <li>Collaborated with the marketing team to develop data-driven promotional strategies using HubSpot, leading to a 25% increase in customer retention across all regions.</li>
         <li>Executed bulk messaging campaigns targeting 10,000+ clients, driving a 15% uplift in player engagement and a 10% increase in deposits.</li>
         <li>Oversaw player engagement and retention initiatives, contributing to a 20% overall growth in customer lifetime value across Asian, African, and Brazilian markets.</li>
       </ul>
-      <h3>Customer Support and Bet Management</h3>
+      Customer Support and Bet Management
       <ul class="list-disc pl-6">
         <li>Handled over 100 customer inquiries daily via chat for iGaming platforms like Bet365, Bet Barter, Aposta Real, and Sky247, ensuring timely resolution of betting issues and account management.</li>
         <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets, achieving a 95% resolution rate within 24 hours.</li>
@@ -97,7 +97,8 @@ I blend market expertise and sustainability passion to craft high-impact marketi
 
   <li>
     <button onclick="toggle('exp3')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
-      BUSINESS DEVELOPMENT MANAGER (REMOTE) - National Chromatography Inco, Europe (Oct 2022 – May 2024)
+      <h3> BUSINESS DEVELOPMENT MANAGER (REMOTE)</h3>
+     National Chromatography Inco, Europe (Oct 2022 – May 2024)
     </button>
     <div id="exp3" class="hidden mt-2 ml-4">
       <ul class="list-disc pl-6">
@@ -112,7 +113,7 @@ I blend market expertise and sustainability passion to craft high-impact marketi
 
   <li>
     <button onclick="toggle('exp4')" class="w-full text-left px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition">
-      CLIENT RELATIONSHIP SPECIALIST - Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)
+      <h3>CLIENT RELATIONSHIP SPECIALIST </h3>- Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)
     </button>
     <div id="exp4" class="hidden mt-2 ml-4">
       <ul class="list-disc pl-6">
@@ -125,7 +126,7 @@ I blend market expertise and sustainability passion to craft high-impact marketi
 
   <li>
     <button onclick="toggle('exp5')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
-      ENVIRONMENTAL CONSULTANT - MGK Aqua Inco, India (Nov 2020 – Aug 2021)
+      <h3>ENVIRONMENTAL CONSULTANT </h3> - MGK Aqua Inco, India (Nov 2020 – Aug 2021)
     </button>
     <div id="exp5" class="hidden mt-2 ml-4">
       <ul class="list-disc pl-6">
@@ -141,7 +142,7 @@ I blend market expertise and sustainability passion to craft high-impact marketi
 
   <li>
     <button onclick="toggle('exp6')" class="w-full text-left px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600 transition">
-      PROJECT ASSISTANT - UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)
+     <h3> PROJECT ASSISTANT </h3>- UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)
     </button>
     <div id="exp6" class="hidden mt-2 ml-4">
       <ul class="list-disc pl-6">
