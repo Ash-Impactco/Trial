@@ -313,6 +313,79 @@
         </div>
     </section>
 
+    <!-- After the intro video section -->
+    <script>
+        // Intro Video Handling
+        const introVideo = document.getElementById('introVideo');
+        const introVideoPlayer = document.getElementById('introVideoPlayer');
+        const introOverlay = document.getElementById('introOverlay');
+        const skipIntro = document.getElementById('skipIntro');
+        const categorySection = document.getElementById('categorySection');
+        const experienceSection = document.getElementById('experience');
+        const projectsSection = document.getElementById('projects');
+        const venturesSection = document.getElementById('ventures');
+
+        // Initially hide sections
+        categorySection.style.display = 'none';
+        experienceSection.style.display = 'none';
+        projectsSection.style.display = 'none';
+        venturesSection.style.display = 'none';
+
+        // Show overlay after 1 second
+        setTimeout(() => {
+            introOverlay.classList.add('active');
+        }, 1000);
+
+        // Handle video end
+        introVideoPlayer.addEventListener('ended', () => {
+            introVideo.style.display = 'none';
+            categorySection.style.display = 'block';
+            categorySection.classList.add('fade-in');
+        });
+
+        // Handle skip button
+        skipIntro.addEventListener('click', () => {
+            introVideo.style.display = 'none';
+            categorySection.style.display = 'block';
+            categorySection.classList.add('fade-in');
+        });
+
+        // Enhanced filter function
+        function filterExperience(category) {
+            const experienceItems = document.querySelectorAll('.experience-timeline > div');
+            experienceSection.style.display = 'block';
+            projectsSection.style.display = 'block';
+            venturesSection.style.display = 'block';
+            
+            // Smooth scroll to experience section
+            experienceSection.scrollIntoView({ behavior: 'smooth' });
+
+            experienceItems.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                const company = item.querySelector('p').textContent.toLowerCase();
+                
+                if (category === 'business') {
+                    if (company.includes('scores') || 
+                        company.includes('nci') || 
+                        company.includes('national chromatography') || 
+                        company.includes('eurail')) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                } else if (category === 'sustainability') {
+                    if (company.includes('cleantech') || 
+                        company.includes('mgk aqua') || 
+                        company.includes('unicef')) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+
     <!-- Category Section -->
     <section id="categorySection" class="category-section">
         <div class="container mx-auto px-4">
@@ -654,76 +727,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        // Intro Video Handling
-        const introVideo = document.getElementById('introVideo');
-        const introVideoPlayer = document.getElementById('introVideoPlayer');
-        const introOverlay = document.getElementById('introOverlay');
-        const skipIntro = document.getElementById('skipIntro');
-        const categorySection = document.getElementById('categorySection');
-        const experienceSection = document.getElementById('experience');
-        const projectsSection = document.getElementById('projects');
-        const venturesSection = document.getElementById('ventures');
-
-        // Initially hide sections
-        categorySection.style.display = 'none';
-        experienceSection.style.display = 'none';
-        projectsSection.style.display = 'none';
-        venturesSection.style.display = 'none';
-
-        // Show overlay after 1 second
-        setTimeout(() => {
-            introOverlay.classList.add('active');
-        }, 1000);
-
-        // Handle video end
-        introVideoPlayer.addEventListener('ended', () => {
-            introVideo.style.display = 'none';
-            categorySection.style.display = 'block';
-            categorySection.classList.add('fade-in');
-        });
-
-        // Handle skip button
-        skipIntro.addEventListener('click', () => {
-            introVideo.style.display = 'none';
-            categorySection.style.display = 'block';
-            categorySection.classList.add('fade-in');
-        });
-
-        // Enhanced filter function
-        function filterExperience(category) {
-            const experienceItems = document.querySelectorAll('.experience-timeline > div');
-            experienceSection.style.display = 'block';
-            projectsSection.style.display = 'block';
-            venturesSection.style.display = 'block';
-            
-            // Smooth scroll to experience section
-            experienceSection.scrollIntoView({ behavior: 'smooth' });
-
-            experienceItems.forEach(item => {
-                const title = item.querySelector('h3').textContent.toLowerCase();
-                const company = item.querySelector('p').textContent.toLowerCase();
-                
-                if (category === 'business') {
-                    if (company.includes('scores') || 
-                        company.includes('nci') || 
-                        company.includes('national chromatography') || 
-                        company.includes('eurail')) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                } else if (category === 'sustainability') {
-                    if (company.includes('cleantech') || 
-                        company.includes('mgk aqua') || 
-                        company.includes('unicef')) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                }
-            });
-        }
-    </script>
 </body>
 </html> 
