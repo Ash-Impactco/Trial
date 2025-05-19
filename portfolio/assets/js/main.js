@@ -274,30 +274,55 @@
   });
 
   // Toggle function for experience sections
-  function toggle(id) {
+  window.toggle = function(id) {
     const element = document.getElementById(id);
-    if (element.style.display === "block") {
-      element.style.display = "none";
-    } else {
-      element.style.display = "block";
+    if (element) {
+      element.classList.toggle('hidden');
+      if (!element.classList.contains('hidden')) {
+        element.classList.add('fade-in');
+        setTimeout(() => element.classList.remove('fade-in'), 500);
+      }
     }
   }
 
   // Typing animation for hero section
-  const heroTitle = document.querySelector('.hero-content h1');
-  if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
+  function typeWriter(element, text, speed = 100) {
     let i = 0;
-    const typeWriter = () => {
-      if (i < text.length) {
-        heroTitle.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
-      }
-    };
-    typeWriter();
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
   }
+
+  // Initialize typing animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const titleElement = document.querySelector('.typing-text h1');
+    const subtitleElement = document.querySelector('.typing-text h2');
+    
+    if (titleElement && subtitleElement) {
+        const titleText = titleElement.textContent;
+        const subtitleText = subtitleElement.textContent;
+        
+        // Clear initial content
+        titleElement.textContent = '';
+        subtitleElement.textContent = '';
+        
+        // Start typing animations with delay
+        setTimeout(() => {
+            typeWriter(titleElement, titleText, 100);
+            setTimeout(() => {
+                typeWriter(subtitleElement, subtitleText, 50);
+            }, titleText.length * 100 + 500);
+        }, 1000);
+    }
+  });
 
   // Project cards hover effect
   const projectCards = document.querySelectorAll('.project-card');

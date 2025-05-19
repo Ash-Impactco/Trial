@@ -127,7 +127,11 @@ Feel free to submit issues and enhancement requests!
 
 If you find this project helpful, please give it a ⭐️ on GitHub!
 
-[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/yourusername/portfolio/commits/master)
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/ash-impactco/portfolio/commits/master)
 [![Website shields.io](https://img.shields.io/badge/website-up-yellow)](https://your-portfolio.vercel.app)
 [![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/yourusername/)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) 
+
+<a href="#about">
+  <img src="assets/profile.jpg" alt="Profile Photo" class="mx-auto mt-6 w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover" />
+</a> 
