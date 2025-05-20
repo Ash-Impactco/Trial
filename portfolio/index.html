@@ -10,56 +10,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- CounterUp -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-    <!-- Waypoints -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <!-- Main CSS -->
     <link href="assets/css/main.css" rel="stylesheet">
-    <!-- Animations CSS -->
-    <link href="assets/css/animations.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2C3E50',    // Dark Blue
-                        secondary: '#34495E',  // Slate Blue
-                        accent: '#7F8C8D',     // Subtle Gray
+                        primary: '#2C3E50',
+                        secondary: '#34495E',
+                        accent: '#7F8C8D',
                     }
                 }
             }
         }
     </script>
-    <style>
-        :root {
-            --primary: #2D3748;
-            --secondary: #4A5568;
-            --accent: #718096;
-            --background: #F7FAFC;
-            --business-red: #E53E3E;
-            --sustainability-blue: #3182CE;
-            --ocean-blue: #1E90FF;
-            --sky-blue: #87CEEB;
-            --sand-color: #F4D03F;
-        }
-        
-        body {
-            background-color: var(--background);
-            color: var(--primary);
-        }
-
-        .section {
-            display: block;
-            opacity: 1;
-        }
-    </style>
 </head>
 <body class="min-h-screen">
     <!-- Navigation -->
@@ -71,10 +36,10 @@
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#ventures">Ventures</a></li>
-                <li><a href="#languages">Languages</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -88,48 +53,31 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="monitor-container">
-                <div class="monitor" style="max-width: 500px; margin: 0 auto;">
-                    <div class="monitor-screen">
-                        <div class="monitor-content">
-                            <h1 class="text-xl md:text-2xl">Aswin Raj Sivaprakash</h1>
-                            <h2 class="text-base md:text-lg">Clean Tech Marketer | Environmental Strategist | CRM Specialist</h2>
-                        </div>
-                    </div>
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Aswin Raj Sivaprakash</h1>
+                <h2 class="text-xl md:text-2xl text-accent mb-8">Clean Tech Marketer | Environmental Strategist | CRM Specialist</h2>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="btn-primary">Contact Me</a>
+                    <a href="assets/Resume/Aswin_Resume.pdf" download class="btn-secondary">Download CV</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Category Section -->
-    <section id="categorySection" class="section">
-        <div class="container mx-auto px-4">
-            <div class="category-buttons" data-aos="fade-up">
-                <button onclick="filterExperience('business')" class="category-button business-button">
-                    <i class="fas fa-chart-line text-3xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">Business Development</h3>
-                    <p class="text-sm opacity-80">Explore my business growth journey</p>
-                </button>
-                <button onclick="filterExperience('sustainability')" class="category-button sustainability-button">
-                    <i class="fas fa-leaf text-3xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">Sustainability</h3>
-                    <p class="text-sm opacity-80">Discover my environmental initiatives</p>
-                </button>
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section expandable-section">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>About</h2>
                 <p>About Me</p>
             </div>
-            <div class="about-content" data-aos="fade-up">
-                <div class="about-text">
-                    <p>A passionate clean tech marketer and sustainability specialist with 5+ years driving CRM, digital strategy, and ESG communications across global markets. I blend market expertise and sustainability passion to craft high-impact marketing strategies for clean technology and environmental initiatives.</p>
-                    <div class="about-info">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="about-image">
+                    <img src="assets/Me.jpg" alt="Aswin Raj Sivaprakash" class="rounded-lg shadow-lg">
+                </div>
+                <div class="about-content">
+                    <p class="mb-6">A passionate clean tech marketer and sustainability specialist with 5+ years driving CRM, digital strategy, and ESG communications across global markets. I blend market expertise and sustainability passion to craft high-impact marketing strategies for clean technology and environmental initiatives.</p>
+                    <div class="grid grid-cols-2 gap-4">
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Porto, Portugal</span>
@@ -142,7 +90,41 @@
                             <i class="fas fa-envelope"></i>
                             <span>aswinr63@gmail.com</span>
                         </div>
+                        <div class="info-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>March 15, 1996</span>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-gray-50">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+                <p>My Academic Journey</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="education-card">
+                    <h3 class="text-xl font-semibold text-primary mb-2">MSc in Environmental Management</h3>
+                    <p class="text-accent mb-4">University of Groningen, Netherlands (2021 - 2023)</p>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Specialized in Sustainable Business Development</li>
+                        <li>Research focus on Clean Technology Integration</li>
+                        <li>Graduated with Distinction</li>
+                    </ul>
+                </div>
+                <div class="education-card">
+                    <h3 class="text-xl font-semibold text-primary mb-2">BSc in Environmental Science</h3>
+                    <p class="text-accent mb-4">University of Delhi, India (2014 - 2018)</p>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Major in Environmental Conservation</li>
+                        <li>Minor in Business Administration</li>
+                        <li>Dean's List for Academic Excellence</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -151,228 +133,90 @@
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Experience</h2>
-                <p>My Experience</p>
+                <p>My Professional Journey</p>
             </div>
-            <div class="experience-timeline" data-aos="fade-up">
+            <div class="experience-timeline">
                 <!-- Experience Item 1 -->
-                <div class="bg-white rounded-lg shadow-sm p-6" data-category="sustainability">
-                    <a href="experience1.html" target="_blank" class="block w-full text-left">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Freelance Clean Tech Marketer</h3>
-                        <p class="text-accent mb-4">Cleantech GrowthLab (Jan 2025 – Present)</p>
-                    </a>
+                <div class="experience-item" data-category="sustainability">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Freelance Clean Tech Marketer</h3>
+                    <p class="text-accent mb-4">Cleantech GrowthLab (Jan 2025 – Present)</p>
+                    <p class="text-gray-600">Leading marketing initiatives for clean technology startups, focusing on sustainable growth and market penetration.</p>
                 </div>
 
                 <!-- Experience Item 2 -->
-                <div class="bg-white rounded-lg shadow-sm p-6" data-category="business">
-                    <a href="experience2.html" target="_blank" class="block w-full text-left">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Customer Success & Marketing Specialist</h3>
-                        <p class="text-accent mb-4">Scores & Levels, Porto (Oct 2023 – Dec 2024)</p>
-                    </a>
+                <div class="experience-item" data-category="business">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Customer Success & Marketing Specialist</h3>
+                    <p class="text-accent mb-4">Scores & Levels, Porto (Oct 2023 – Dec 2024)</p>
+                    <p class="text-gray-600">Managed customer relationships and implemented marketing strategies for a growing tech company.</p>
                 </div>
 
                 <!-- Experience Item 3 -->
-                <div class="bg-white rounded-lg shadow-sm p-6" data-category="business">
-                    <a href="experience3.html" target="_blank" class="block w-full text-left">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Business Development Manager (Remote)</h3>
-                        <p class="text-accent mb-4">National Chromatography Inco, Europe (Oct 2022 – May 2024)</p>
-                    </a>
+                <div class="experience-item" data-category="business">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Business Development Manager (Remote)</h3>
+                    <p class="text-accent mb-4">National Chromatography Inco, Europe (Oct 2022 – May 2024)</p>
+                    <p class="text-gray-600">Led business development initiatives across European markets, focusing on sustainable growth.</p>
                 </div>
 
                 <!-- Experience Item 4 -->
-                <div class="bg-white rounded-lg shadow-sm p-6" data-category="business">
-                    <a href="experience4.html" target="_blank" class="block w-full text-left">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Client Relationship Specialist</h3>
-                        <p class="text-accent mb-4">Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)</p>
-                    </a>
+                <div class="experience-item" data-category="business">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Client Relationship Specialist</h3>
+                    <p class="text-accent mb-4">Eurail (European Travel company), Netherlands (Sept 2022 – Aug 2023)</p>
+                    <p class="text-gray-600">Managed client relationships and implemented CRM strategies for a leading travel company.</p>
                 </div>
 
                 <!-- Experience Item 5 -->
-                <div class="bg-white rounded-lg shadow-sm p-6" data-category="sustainability">
-                    <a href="experience5.html" target="_blank" class="block w-full text-left">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Environmental Consultant</h3>
-                        <p class="text-accent mb-4">MGK Aqua Inco, India (Nov 2020 – Aug 2021)</p>
-                    </a>
+                <div class="experience-item" data-category="sustainability">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Environmental Consultant</h3>
+                    <p class="text-accent mb-4">MGK Aqua Inco, India (Nov 2020 – Aug 2021)</p>
+                    <p class="text-gray-600">Provided environmental consulting services, focusing on sustainable water management solutions.</p>
                 </div>
 
                 <!-- Experience Item 6 -->
-                <div class="bg-white rounded-lg shadow-sm p-6" data-category="sustainability">
-                    <a href="experience6.html" target="_blank" class="block w-full text-left">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Project Assistant</h3>
-                        <p class="text-accent mb-4">UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)</p>
-                    </a>
+                <div class="experience-item" data-category="sustainability">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Project Assistant</h3>
+                    <p class="text-accent mb-4">UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 – Jun 2019)</p>
+                    <p class="text-gray-600">Assisted in implementing WASH projects and community development initiatives.</p>
                 </div>
-            </div>
-        </div>
-        <div class="company-logos">
-            <h3>Company Logos</h3>
-            <div class="logo-container">
-                <a href="https://www.proclime.world/" target="_blank" rel="noopener">
-                    <img src="assets/Companies/download (7).png" alt="Proclime Logo" loading="lazy">
-                </a>
-                <a href="https://windcredible.com/" target="_blank" rel="noopener">
-                    <img src="assets/Companies/1677765123902.jpeg" alt="Windcredible Logo" loading="lazy">
-                </a>
-                <a href="https://www.cleantechgrowthlab.com/" target="_blank" rel="noopener">
-                    <img src="assets/Companies/download (6).png" alt="CleanTech GrowthLab Logo" loading="lazy">
-                </a>
-                <a href="https://www.unicef.org/" target="_blank" rel="noopener">
-                    <img src="assets/Companies/download (5).png" alt="UNICEF Logo" loading="lazy">
-                </a>
-            </div>
-            <h3>Clean Tech Logos</h3>
-            <div class="logo-container">
-                <img src="assets/Clean tech/smoob_logo.jpeg" alt="Clean Tech Logo 1" loading="lazy">
-                <img src="assets/Clean tech/download.jpeg" alt="Clean Tech Logo 2" loading="lazy">
-                <img src="assets/Clean tech/download (4).png" alt="Clean Tech Logo 3" loading="lazy">
-                <img src="assets/Clean tech/download (3).png" alt="Clean Tech Logo 4" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-gray-50">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Projects</h2>
-                <p>My Projects</p>
+            <div class="section-header">
+                <h2>Skills</h2>
+                <p>My Expertise</p>
             </div>
-            <div class="projects-grid" data-aos="fade-up">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h3 class="text-xl font-semibold text-primary mb-2">Geothermal Heat Grid Case Study</h3>
-                    <p class="text-accent mb-4">Leeuwarden, NL (Feb 2022 – Apr 2022)</p>
-                    <p class="text-gray-600">Collected qualitative data from 100 respondents on geothermal integration using DESSIN-ESS. Findings published by <a href="https://www.omropfryslan.nl/nl/nieuws/1144457/internationale-studenten-duurzame-aanpak-in-fryslan-is-mogelijk" target="_blank" class="text-primary hover:underline">Omrop</a>.</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Marketing & Strategy</h3>
+                    <ul class="space-y-2">
+                        <li>Digital Marketing</li>
+                        <li>CRM Management</li>
+                        <li>Market Analysis</li>
+                        <li>Strategic Planning</li>
+                    </ul>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h3 class="text-xl font-semibold text-primary mb-2">Coral Bleaching Status Study</h3>
-                    <p class="text-accent mb-4">Andaman Islands, India (Dec 2017 – Feb 2018)</p>
-                    <p class="text-gray-600">Identified 1°C SST increase causing symbiosis degradation. Assessed thermal stress via CBAS. Presented findings to ANET, Indian Wildlife Dept. & Coast Guard.</p>
+                <div class="skill-card">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Sustainability</h3>
+                    <ul class="space-y-2">
+                        <li>ESG Reporting</li>
+                        <li>Environmental Impact Assessment</li>
+                        <li>Sustainable Development</li>
+                        <li>Clean Tech Integration</li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ventures Section -->
-    <section id="ventures" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Ventures</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Podcast -->
-                <div class="bg-white rounded-lg shadow-md p-6" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold text-primary mb-4">Intrusive Thoughts FTW</h3>
-                    <p class="text-gray-600 mb-4">A social concept that supports taking risks and chasing ideas. Join us as we explore innovative solutions and sustainable practices through engaging conversations.</p>
-                    <div class="space-y-4">
-                        <a href="https://linktr.ee/intrusivethoughtsftw" target="_blank" class="block text-primary hover:text-accent transition-colors">
-                            <div class="flex items-center">
-                                <i class="fas fa-play-circle mr-2"></i>
-                                <span>EP01: SUSTAINABLE CLOTHING EXCHANGE</span>
-                            </div>
-                        </a>
-                        <a href="https://linktr.ee/intrusivethoughtsftw" target="_blank" class="block text-primary hover:text-accent transition-colors">
-                            <div class="flex items-center">
-                                <i class="fas fa-play-circle mr-2"></i>
-                                <span>EP02: SAVE, SHARE, SAVOR - Zero Food Waste Edition</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="mt-4">
-                        <a href="https://linktr.ee/intrusivethoughtsftw" target="_blank" class="inline-flex items-center text-accent hover:text-primary transition-colors">
-                            <i class="fas fa-link mr-2"></i>
-                            Visit Linktree
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-primary mb-4">Plant-Based Ventures</h3>
-                    <p class="text-gray-600 mb-4">Passionate about sustainable food systems and plant-based cuisine, I've founded and operated successful ventures that blend innovation with traditional flavors.</p>
-                    
-                    <div class="space-y-6">
-                        <!-- Burrito Delhi -->
-                        <div class="border-l-4 border-primary pl-4">
-                            <h4 class="font-semibold text-primary mb-2">Burrito Delhi</h4>
-                            <p class="text-gray-600 mb-2">A revolutionary cloud kitchen in Amsterdam serving vegan Mexican-Indian fusion burritos. Combining authentic flavors with sustainable practices.</p>
-                            <a href="https://www.instagram.com/burrito_delhi/" target="_blank" class="inline-flex items-center text-accent hover:text-primary transition-colors">
-                                <i class="fab fa-instagram mr-2"></i>
-                                @burrito_delhi
-                            </a>
-                        </div>
-
-                        <!-- Anna Ka Dukaan -->
-                        <div class="border-l-4 border-primary pl-4">
-                            <h4 class="font-semibold text-primary mb-2">Anna Ka Dukaan</h4>
-                            <p class="text-gray-600 mb-2">A thriving plant-based restaurant chain with locations in Delhi and Siliguri, serving innovative vegetarian cuisine with a modern twist.</p>
-                            <a href="https://www.instagram.com/annakadukaan/" target="_blank" class="inline-flex items-center text-accent hover:text-primary transition-colors">
-                                <i class="fab fa-instagram mr-2"></i>
-                                @annakadukaan
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="mt-6">
-                        <p class="text-sm text-gray-500 italic">"Creating sustainable food systems through innovative plant-based cuisine and conscious business practices."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Languages Section -->
-    <section id="languages" class="section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Languages</h2>
-                <p>Language Proficiency</p>
-            </div>
-            <div class="languages-content" data-aos="fade-up">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Fluent Languages -->
-                    <div>
-                        <h3 class="text-lg font-semibold text-primary mb-4">Fluent</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">English</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Tamil</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Hindi</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Kannada</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Learning Languages -->
-                    <div>
-                        <h3 class="text-lg font-semibold text-primary mb-4">Learning</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <i class="fas fa-language text-blue-500 mr-2"></i>
-                                <span class="text-gray-700">Portuguese (Intermediate)</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-language text-blue-500 mr-2"></i>
-                                <span class="text-gray-700">Dutch (Elementary)</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-language text-blue-500 mr-2"></i>
-                                <span class="text-gray-700">Bahasa (Learning)</span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="skill-card">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Tools & Technologies</h3>
+                    <ul class="space-y-2">
+                        <li>Salesforce</li>
+                        <li>HubSpot</li>
+                        <li>Google Analytics</li>
+                        <li>Microsoft Office Suite</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -381,45 +225,39 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Contact</h2>
                 <p>Get In Touch</p>
             </div>
-            <div class="contact-content" data-aos="fade-up">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-lg shadow-sm p-6">
-                        <div class="flex flex-col items-center mb-6">
-                            <img src="assets/Me.jpg" alt="Aswin Raj Sivaprakash" class="w-48 h-48 rounded-full object-cover shadow-lg mb-4">
-                            <h3 class="text-xl font-semibold text-primary">Aswin Raj Sivaprakash</h3>
-                            <p class="text-accent">Clean Tech Marketer & Environmental Strategist</p>
-                        </div>
-                        <div class="space-y-4">
-                            <p class="flex items-center text-gray-600">
-                                <i class="fas fa-map-marker-alt w-6"></i>
-                                Porto, Portugal
-                            </p>
-                            <p class="flex items-center text-gray-600">
-                                <i class="fas fa-phone w-6"></i>
-                                +351 938816822
-                            </p>
-                            <p class="flex items-center text-gray-600">
-                                <i class="fas fa-envelope w-6"></i>
-                                <a href="mailto:aswinr63@gmail.com" class="text-primary hover:underline">aswinr63@gmail.com</a>
-                            </p>
-                        </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="contact-info">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <p class="flex items-center">
+                            <i class="fas fa-map-marker-alt w-6"></i>
+                            Porto, Portugal
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-phone w-6"></i>
+                            +351 938816822
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope w-6"></i>
+                            <a href="mailto:aswinr63@gmail.com" class="text-primary hover:underline">aswinr63@gmail.com</a>
+                        </p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-4">Social Links</h3>
-                        <div class="space-y-4">
-                            <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank" class="flex items-center text-gray-600 hover:text-primary">
-                                <i class="fab fa-linkedin w-6"></i>
-                                LinkedIn Profile
-                            </a>
-                            <a href="assets/Resume/Aswin_Resume.pdf" download="Aswin_Raj_Resume.pdf" class="flex items-center text-gray-600 hover:text-primary">
-                                <i class="fas fa-file-alt w-6"></i>
-                                Download Resume
-                            </a>
-                        </div>
+                </div>
+                <div class="contact-info">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Social Links</h3>
+                    <div class="space-y-4">
+                        <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank" class="flex items-center text-gray-600 hover:text-primary">
+                            <i class="fab fa-linkedin w-6"></i>
+                            LinkedIn Profile
+                        </a>
+                        <a href="assets/Resume/Aswin_Resume.pdf" download class="flex items-center text-gray-600 hover:text-primary">
+                            <i class="fas fa-file-alt w-6"></i>
+                            Download Resume
+                        </a>
                     </div>
                 </div>
             </div>
@@ -439,56 +277,6 @@
     </a>
 
     <!-- Scripts -->
-    <script>
-        // Enhanced filter function
-        function filterExperience(category) {
-            const experienceItems = document.querySelectorAll('.experience-timeline > div');
-            
-            // Filter experience items
-            experienceItems.forEach(item => {
-                const company = item.querySelector('p').textContent.toLowerCase();
-                
-                if (category === 'business') {
-                    if (company.includes('scores') || 
-                        company.includes('nci') || 
-                        company.includes('national chromatography') || 
-                        company.includes('eurail')) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                } else if (category === 'sustainability') {
-                    if (company.includes('cleantech') || 
-                        company.includes('mgk aqua') || 
-                        company.includes('unicef')) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                }
-            });
-        }
-
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-
-        // Handle navigation
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
     <script src="assets/js/main.js"></script>
-    <script src="test.js"></script>
 </body>
 </html> 
