@@ -62,8 +62,56 @@
             width: 100%;
             height: 100vh;
             z-index: 1000;
-            background: linear-gradient(180deg, var(--sky-blue) 0%, var(--ocean-blue) 100%);
-            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .intro-welcome.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .welcome-content {
+            text-align: center;
+            color: white;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .skip-intro {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border: 1px solid white;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .skip-intro:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .section.visible {
+            display: block;
+            opacity: 1;
         }
 
         .beach-scene {
@@ -164,197 +212,11 @@
             background: var(--sand-color);
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
-
-        .welcome-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            animation: fadeInUp 1.5s ease;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .skip-intro {
-            position: absolute;
-            bottom: 2rem;
-            right: 2rem;
-            color: white;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border: 1px solid white;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-        }
-
-        .skip-intro:hover {
-            background: white;
-            color: var(--ocean-blue);
-        }
-
-        .business-section {
-            background: linear-gradient(135deg, var(--business-red) 0%, #C53030 100%);
-        }
-
-        .sustainability-section {
-            background: linear-gradient(135deg, var(--sustainability-blue) 0%, #2C5282 100%);
-        }
-
-        .category-button {
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .category-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .business-button {
-            background: linear-gradient(135deg, var(--business-red) 0%, #C53030 100%);
-        }
-
-        .sustainability-button {
-            background: linear-gradient(135deg, var(--sustainability-blue) 0%, #2C5282 100%);
-        }
-
-        .btn-business {
-            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
-            color: #2C3E50;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #90CAF9;
-        }
-        .btn-business:hover {
-            background: linear-gradient(135deg, #BBDEFB 0%, #90CAF9 100%);
-            transform: translateY(-2px);
-        }
-        .btn-sustainability {
-            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
-            color: #2C3E50;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #A5D6A7;
-        }
-        .btn-sustainability:hover {
-            background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
-            transform: translateY(-2px);
-        }
-        .logo-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .logo-container img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            max-height: 100px;
-            transition: transform 0.3s ease;
-        }
-        .logo-container img:hover {
-            transform: scale(1.05);
-        }
-        .company-logos {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 0.5rem;
-        }
-        .company-logos h3 {
-            color: #2C3E50;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .category-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-        }
-
-        .category-buttons {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .category-button {
-            padding: 2rem 4rem;
-            font-size: 1.5rem;
-            border-radius: 1rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-align: center;
-            min-width: 300px;
-        }
-
-        .business-button {
-            background: linear-gradient(135deg, var(--business-red) 0%, #C53030 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
-        }
-
-        .sustainability-button {
-            background: linear-gradient(135deg, var(--sustainability-blue) 0%, #2C5282 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
-        }
-
-        .category-button:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .section {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-        }
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Welcome Animation Section -->
+    <!-- Welcome Screen -->
     <div class="intro-welcome" id="introWelcome">
-        <div class="beach-scene">
-            <div class="clouds">
-                <div class="cloud"></div>
-                <div class="cloud"></div>
-                <div class="cloud"></div>
-            </div>
-            <div class="waves">
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-            </div>
-            <div class="beach"></div>
-        </div>
         <div class="welcome-content">
             <h1 class="text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
             <p class="text-2xl">Exploring Business Development & Sustainability</p>
@@ -409,84 +271,8 @@
         </div>
     </section>
 
-    <!-- After the intro section -->
-    <script>
-        // Welcome Animation Handling
-        const introWelcome = document.getElementById('introWelcome');
-        const skipIntro = document.getElementById('skipIntro');
-        const categorySection = document.getElementById('categorySection');
-        const experienceSection = document.getElementById('experience');
-        const projectsSection = document.getElementById('projects');
-        const venturesSection = document.getElementById('ventures');
-        const aboutSection = document.getElementById('about');
-        const languagesSection = document.getElementById('languages');
-        const contactSection = document.getElementById('contact');
-
-        // Initially hide all sections except category
-        experienceSection.style.display = 'none';
-        projectsSection.style.display = 'none';
-        venturesSection.style.display = 'none';
-        aboutSection.style.display = 'none';
-        languagesSection.style.display = 'none';
-        contactSection.style.display = 'none';
-
-        // Handle skip button
-        skipIntro.addEventListener('click', () => {
-            introWelcome.classList.add('fade-out');
-            setTimeout(() => {
-                introWelcome.style.display = 'none';
-                categorySection.style.display = 'block';
-                categorySection.classList.add('fade-in');
-            }, 1000);
-        });
-
-        // Enhanced filter function
-        function filterExperience(category) {
-            const experienceItems = document.querySelectorAll('.experience-timeline > div');
-            experienceSection.style.display = 'block';
-            projectsSection.style.display = 'block';
-            venturesSection.style.display = 'block';
-            aboutSection.style.display = 'block';
-            languagesSection.style.display = 'block';
-            contactSection.style.display = 'block';
-            
-            // Smooth scroll to experience section
-            experienceSection.scrollIntoView({ behavior: 'smooth' });
-
-            experienceItems.forEach(item => {
-                const title = item.querySelector('h3').textContent.toLowerCase();
-                const company = item.querySelector('p').textContent.toLowerCase();
-                
-                if (category === 'business') {
-                    if (company.includes('scores') || 
-                        company.includes('nci') || 
-                        company.includes('national chromatography') || 
-                        company.includes('eurail')) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                } else if (category === 'sustainability') {
-                    if (company.includes('cleantech') || 
-                        company.includes('mgk aqua') || 
-                        company.includes('unicef')) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                }
-            });
-        }
-
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
-
     <!-- Category Section -->
-    <section id="categorySection" class="category-section">
+    <section id="categorySection" class="section">
         <div class="container mx-auto px-4">
             <div class="category-buttons" data-aos="fade-up">
                 <button onclick="filterExperience('business')" class="category-button business-button">
@@ -823,8 +609,100 @@
     </a>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Welcome Screen Handling
+        const introWelcome = document.getElementById('introWelcome');
+        const skipIntro = document.getElementById('skipIntro');
+        const categorySection = document.getElementById('categorySection');
+        const sections = document.querySelectorAll('.section');
+
+        // Initially hide all sections except category
+        sections.forEach(section => {
+            if (section.id !== 'categorySection') {
+                section.style.display = 'none';
+            }
+        });
+
+        // Handle skip button
+        skipIntro.addEventListener('click', () => {
+            introWelcome.classList.add('fade-out');
+            setTimeout(() => {
+                introWelcome.style.display = 'none';
+                categorySection.style.display = 'block';
+                categorySection.classList.add('visible');
+            }, 500);
+        });
+
+        // Enhanced filter function
+        function filterExperience(category) {
+            const experienceItems = document.querySelectorAll('.experience-timeline > div');
+            
+            // Show all sections
+            sections.forEach(section => {
+                section.style.display = 'block';
+                setTimeout(() => {
+                    section.classList.add('visible');
+                }, 100);
+            });
+            
+            // Smooth scroll to experience section
+            document.getElementById('experience').scrollIntoView({ behavior: 'smooth' });
+
+            // Filter experience items
+            experienceItems.forEach(item => {
+                const company = item.querySelector('p').textContent.toLowerCase();
+                
+                if (category === 'business') {
+                    if (company.includes('scores') || 
+                        company.includes('nci') || 
+                        company.includes('national chromatography') || 
+                        company.includes('eurail')) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                } else if (category === 'sustainability') {
+                    if (company.includes('cleantech') || 
+                        company.includes('mgk aqua') || 
+                        company.includes('unicef')) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Handle navigation
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                        section.classList.remove('visible');
+                    });
+                    
+                    targetSection.style.display = 'block';
+                    setTimeout(() => {
+                        targetSection.classList.add('visible');
+                    }, 100);
+                    
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
     <script src="assets/js/main.js"></script>
+    <script src="test.js"></script>
 </body>
 </html> 
