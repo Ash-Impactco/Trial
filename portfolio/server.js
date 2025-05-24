@@ -18,12 +18,12 @@ app.use((err, req, res, next) => {
     res.status(500).sendFile(path.join(__dirname, '404.html'));
 });
 
-// Start server
+module.exports = app;
+
 if (process.env.NODE_ENV !== 'production') {
     app.listen(PORT, () => {
         console.log(`Server running at http://localhost:${PORT}/`);
     });
 }
-
 // Export for Vercel
 module.exports = app; 
