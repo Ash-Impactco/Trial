@@ -7,12 +7,16 @@
 
 /* Variables */
 :root {
-    --primary: #2D3748;
-    --secondary: #4A5568;
-    --accent: #718096;
-    --background: #F7FAFC;
+    --primary: #2563eb;
+    --secondary: #3b82f6;
+    --accent: #60a5fa;
+    --background: #f8fafc;
     --white: #ffffff;
-    --transition: all 0.3s ease;
+    --text-color: #1e293b;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Reset & Base Styles */

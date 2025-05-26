@@ -291,11 +291,11 @@
     element.innerHTML = '';
     
     function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
     }
     
     type();
@@ -306,41 +306,134 @@
     const titleElement = document.querySelector('.typing-text h1');
     const subtitleElement = document.querySelector('.typing-text h2');
     
-    if (titleElement && subtitleElement) {
-        const titleText = titleElement.textContent;
-        const subtitleText = subtitleElement.textContent;
+    // Add fade-in animations
+    const animateElements = () => {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
         
-        // Clear initial content
-        titleElement.textContent = '';
-        subtitleElement.textContent = '';
-        
-        // Start typing animations with delay
+        if (elementTop < window.innerHeight && elementBottom > 0) {
+          element.classList.add('fade-in');
+        }
+      });
+    };
+
+    // Start typing animations
+    typeWriter(titleElement, 'Prerak Raja');
+    typeWriter(subtitleElement, 'Focused and enthusiastic developer with a keen interest in software development and artificial intelligence');
+    
+    // Add scroll event listener for animations
+    window.addEventListener('scroll', animateElements);
+    animateElements(); // Initial check
+
+    // Add smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add loading animation
+    window.addEventListener('load', () => {
+      const loader = document.querySelector('.loader');
+      if (loader) {
+        loader.style.opacity = '0';
         setTimeout(() => {
-            typeWriter(titleElement, titleText, 100);
-            setTimeout(() => {
-                typeWriter(subtitleElement, subtitleText, 50);
-            }, titleText.length * 100 + 500);
-        }, 1000);
+          loader.style.display = 'none';
+        }, 500);
+      }
+    });
+
+    // Make sections expandable
+    document.querySelectorAll('.section').forEach(section => {
+      const header = section.querySelector('.section-header');
+      if (header) {
+        header.addEventListener('click', () => {
+          const content = section.querySelector('.section-content');
+          if (content) {
+            content.classList.toggle('expanded');
+            header.classList.toggle('expanded');
+          }
+        });
+      }
+    });
+
+    // Project cards hover effect
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+        card.style.transition = 'transform 0.3s ease';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+      });
+    });
+  });
+})(jQuery);
+
+    // Create modal function
+    function createModal(content) {
+      const modal = document.createElement('div');
+      modal.className = 'modal';
+      modal.innerHTML = `
+        <div class="modal-content">
+          <span class="modal-close">&times;</span>
+          ${content}
+        </div>
+      `;
+      document.body.appendChild(modal);
+      
+      const closeBtn = modal.querySelector('.modal-close');
+      closeBtn.addEventListener('click', () => {
+        modal.remove();
+      });
+
+      // Close modal when clicking outside
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.remove();
+        }
+      });
     }
-  });
 
-  // Project cards hover effect
-  const projectCards = document.querySelectorAll('.project-card');
-  projectCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-10px)';
+    // Make experience items expandable
+    document.querySelectorAll('.experience-item').forEach(item => {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', () => {
+        const content = item.innerHTML;
+        createModal(content);
+      });
     });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'translateY(0)';
-    });
-  });
 
-  // Form validation
-  const contactForm = document.querySelector('#contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      document.addEventListener('DOMContentLoaded', () => {
+    // Make education cards expandable
+    document.querySelectorAll('.education-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        const content = card.innerHTML;
+        createModal(content);
+      });
+    });
+
+    // Make skill cards expandable
+    document.querySelectorAll('.skill-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        const content = card.innerHTML;
+        createModal(content);
+      });
+    });
+
+    // Form validation
+    const contactForm = document.querySelector('#contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           anchor.addEventListener('click', function (e) {
@@ -375,127 +468,62 @@
           }
           lastScroll = currentScroll;
         });
-
-        // Form submission
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-          contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Here you would typically add form submission logic
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-          });
-        }
-
-        // Add animation on scroll
-        const animateOnScroll = () => {
-          const elements = document.querySelectorAll('.animate-on-scroll');
-          elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementBottom = element.getBoundingClientRect().bottom;
-            
-            if (elementTop < window.innerHeight && elementBottom > 0) {
-              element.classList.add('visible');
-            }
-          });
-        };
-
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Initial check
+        
+        // Show success message
+        alert('Thank you for your message! I will get back to you soon.');
+        contactForm.reset();
       });
-      alert('Thank you for your message! I will get back to you soon.');
-      contactForm.reset();
-    });
-  }
+    }
+  });
+})(jQuery);
 
+  // Create modal function
   function createModal(content) {
     const modal = document.createElement('div');
     modal.className = 'modal';
     modal.innerHTML = `
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            ${content}
-        </div>
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        ${content}
+      </div>
     `;
     document.body.appendChild(modal);
     
-    // Show modal
-    setTimeout(() => modal.classList.add('active'), 10);
-    
-    // Close modal on click
-    modal.querySelector('.modal-close').addEventListener('click', () => {
-        modal.classList.remove('active');
-        setTimeout(() => modal.remove(), 300);
+    const closeBtn = modal.querySelector('.modal-close');
+    closeBtn.addEventListener('click', () => {
+      modal.remove();
     });
-    
-    // Close modal on outside click
+
+    // Close modal when clicking outside
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            setTimeout(() => modal.remove(), 300);
-        }
+      if (e.target === modal) {
+        modal.remove();
+      }
     });
   }
 
-  // Make sections expandable
-  document.querySelectorAll('.section').forEach(section => {
-    const header = section.querySelector('.section-header');
-    if (header) {
-        header.style.cursor = 'pointer';
-        header.addEventListener('click', () => {
-            const content = section.innerHTML;
-            createModal(content);
-        });
-    }
-  });
-
-  // Make experience items expandable
-  document.querySelectorAll('.experience-item').forEach(item => {
-    item.style.cursor = 'pointer';
-    item.addEventListener('click', () => {
-        const content = item.innerHTML;
-        createModal(content);
-    });
-  });
-
-  // Make education cards expandable
-  document.querySelectorAll('.education-card').forEach(card => {
-    card.style.cursor = 'pointer';
-    card.addEventListener('click', () => {
-        const content = card.innerHTML;
-        createModal(content);
-    });
-  });
-
-  // Make skill cards expandable
-  document.querySelectorAll('.skill-card').forEach(card => {
-    card.style.cursor = 'pointer';
-    card.addEventListener('click', () => {
-        const content = card.innerHTML;
-        createModal(content);
-    });
-  });
-
   // Back to top button
   const backToTop = document.querySelector('.back-to-top');
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 100) {
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
         backToTop.classList.add('visible');
-    } else {
+      } else {
         backToTop.classList.remove('visible');
-    }
-  });
+      }
+    });
+  }
 
   // Smooth scroll for navigation
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
     });
   });
 
@@ -503,17 +531,18 @@
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-  });
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
 
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove('active');
         hamburger.classList.remove('active');
-    }
-  });
-
+      }
+    });
+  }
 })(jQuery); 
