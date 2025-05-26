@@ -638,96 +638,88 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
       contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-              target.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }
-          });
-        });
+  });
+});
 
-        // Navbar scroll effect
-        const navbar = document.querySelector('.navbar');
-        let lastScroll = 0;
-        
-        window.addEventListener('scroll', () => {
-          const currentScroll = window.pageYOffset;
-          
-          if (currentScroll <= 0) {
-            navbar.classList.remove('scroll-up');
-            return;
-          }
-          
-          if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
-            navbar.classList.remove('scroll-up');
-            navbar.classList.add('scroll-down');
-          } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
-            navbar.classList.remove('scroll-down');
-            navbar.classList.add('scroll-up');
-          }
-          lastScroll = currentScroll;
-        });
-        
-        // Show success message
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
-      });
+// Initialize typed.js
+if ($('.typed').length) {
+  var typed_strings = $('.typed').data('typed-items').split(',');
+  new Typed('.typed', {
+    strings: typed_strings,
+    loop: true,
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 2000
+  });
+}
+
+// Init AOS
+function aos_init() {
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false
+  });
+}
+
+// Modal initialization
+const modal = document.querySelector('.modal');
+if (modal) {
+  const closeBtn = modal.querySelector('.modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
+}
+
+// Initialize all functions
+document.addEventListener('DOMContentLoaded', () => {
+  aos_init();
+});
+
+// Back to top button
+const backToTop = document.querySelector('.back-to-top');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      backToTop.classList.add('active');
+    } else {
+      backToTop.classList.remove('active');
     }
   });
-})(jQuery);
 
-  // Create modal function
-  function createModal(content) {
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    modal.innerHTML = `
-      <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        ${content}
-      </div>
-    `;
-    document.body.appendChild(modal);
-    
-    const closeBtn = modal.querySelector('.modal-close');
-    closeBtn.addEventListener('click', () => {
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// Create modal function
+function createModal(content) {
+  const modal = document.createElement('div');
+  modal.className = 'modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      ${content}
+    </div>
+  `;
+  document.body.appendChild(modal);
+  
+  const closeBtn = modal.querySelector('.modal-close');
+  closeBtn.addEventListener('click', () => {
+    modal.remove();
+  });
+
+  // Close modal when clicking outside
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
       modal.remove();
-    });
-
-    // Close modal when clicking outside
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.remove();
-      }
-    });
-  }
-
-  // Back to top button
-  const backToTop = document.querySelector('.back-to-top');
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 100) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-  }
-
-  // Smooth scroll for navigation
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
+    }
       }
     });
   });
