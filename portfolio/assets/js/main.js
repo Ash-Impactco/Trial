@@ -269,61 +269,266 @@
     $('.progress .progress-bar').each(function() {
       $(this).css("width", $(this).attr("aria-valuenow") + '%');
     });
-  }, {
-    offset: '80%'
+  });
+});
+
+// Nav Menu
+$(document).on('click', '.nav-menu a, .mobile-nav a', function(e) {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var hash = this.hash;
+    var target = $(hash);
+    if (target.length) {
+      e.preventDefault();
+
+      if ($(this).parents('.nav-menu, .mobile-nav').length) {
+        $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+        $(this).closest('li').addClass('active');
+      }
+
+      if (hash == '#header') {
+        $('#header').removeClass('header-top');
+        $("section").removeClass('section-show');
+        return;
+      }
+
+      if (!$('#header').hasClass('header-top')) {
+        $('#header').addClass('header-top');
+        setTimeout(function() {
+          $("section").removeClass('section-show');
+          $(hash).addClass('section-show');
+        }, 350);
+      } else {
+        $("section").removeClass('section-show');
+        $(hash).addClass('section-show');
+      }
+
+      if ($('body').hasClass('mobile-nav-active')) {
+        $('body').removeClass('mobile-nav-active');
+        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+        $('.mobile-nav-overly').fadeOut();
+      }
+
+      return false;
+    }
+  }
+});
+
+// Activate/show sections on load with hash links
+if (window.location.hash) {
+  var initial_nav = window.location.hash;
+  if ($(initial_nav).length) {
+    $('#header').addClass('header-top');
+    $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+    $('.nav-menu, .mobile-nav').find('a[href="' + initial_nav + '"]').parent('li').addClass('active');
+    setTimeout(function() {
+      $("section").removeClass('section-show');
+      $(initial_nav).addClass('section-show');
+    }, 350);
+  }
+}
+
+// Mobile Navigation
+if ($('.nav-menu').length) {
+  var $mobile_nav = $('.nav-menu').clone().prop({
+    class: 'mobile-nav d-lg-none'
+  });
+  $('body').append($mobile_nav);
+  $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+  $('body').append('<div class="mobile-nav-overly"></div>');
+
+  $(document).on('click', '.mobile-nav-toggle', function(e) {
+    $('body').toggleClass('mobile-nav-active');
+    $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+    $('.mobile-nav-overly').toggle();
   });
 
-  // Toggle function for experience sections
-  window.toggle = function(id) {
-    const element = document.getElementById(id);
-    if (element) {
-      element.classList.toggle('hidden');
-      if (!element.classList.contains('hidden')) {
+  $(document).click(function(e) {
+    var container = $(".mobile-nav, .mobile-nav-toggle");
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      if ($('body').hasClass('mobile-nav-active')) {
+        $('body').removeClass('mobile-nav-active');
+        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+        $('.mobile-nav-overly').fadeOut();
+      }
+    }
+  });
+} else if ($(".mobile-nav, .mobile-nav-toggle").length) {
+  $(".mobile-nav, .mobile-nav-toggle").hide();
+}
+
+// jQuery counterUp
+$('[data-toggle="counter-up"]').counterUp({
+  delay: 10,
+  time: 1000
+});
+
+// Skills section
+$('.skills-content').waypoint(function() {
+  $('.progress .progress-bar').each(function() {
+    $(this).css("width", $(this).attr("aria-valuenow") + '%');
+  });
+}, {
+  offset: '80%'
+});
+
+// Toggle function for experience sections
+window.toggle = function toggle(id) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.classList.toggle('expanded');
+    element.style.transition = 'var(--transition)';
+    
+    // Add animation on toggle
+    if (element.classList.contains('expanded')) {
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+    } else {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(-10px)';
+    }
+  }
+}
+
+// Typing animation for hero section
+function typeWriter(element, text, speed = 100) {
+  let i = 0;
+  element.innerHTML = '';
+  
+  function type() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  
+  type();
+}
+
+// Initialize typing animations
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize animations
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.classList.add('fade-in');
+  });
+
+  // Experience items animation
+  const experienceItems = document.querySelectorAll('.experience-item');
+  experienceItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+      item.style.transform = 'translateY(-5px)';
+      item.style.boxShadow = 'var(--shadow-lg)';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.style.transform = 'translateY(0)';
+      item.style.boxShadow = 'var(--shadow-sm)';
+    });
+    setTimeout(() => {
+      item.classList.add('slide-in-left');
+    }, index * 200);
+  });
+
+  // Projects animation
+  const projects = document.querySelectorAll('.project');
+  projects.forEach((project, index) => {
+    project.addEventListener('mouseenter', () => {
+      project.style.transform = 'scale(1.02)';
+      project.style.boxShadow = 'var(--shadow-lg)';
+    });
+    project.addEventListener('mouseleave', () => {
+      project.style.transform = 'scale(1)';
+      project.style.boxShadow = 'var(--shadow-sm)';
+    });
+    setTimeout(() => {
+      project.classList.add('scale-in');
+    }, index * 300);
+  });
+
+  // Smooth scrolling for navigation
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Add hover effects to buttons
+  const buttons = document.querySelectorAll('.btn');
+  buttons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+      button.style.transform = 'scale(1.05)';
+      button.style.boxShadow = 'var(--shadow-md)';
+    });
+    button.addEventListener('mouseleave', () => {
+      button.style.transform = 'scale(1)';
+      button.style.boxShadow = 'var(--shadow-sm)';
+    });
+  });
+
+  // Add smooth scroll behavior
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('#header');
+    if (header) {
+      if (window.scrollY > 100) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    }
+  });
+
+  // Start typing animations
+  const titleElement = document.querySelector('.typing-text h1');
+  const subtitleElement = document.querySelector('.typing-text h2');
+  typeWriter(titleElement, 'Prerak Raja');
+  typeWriter(subtitleElement, 'Focused and enthusiastic developer with a keen interest in software development and artificial intelligence');
+  
+  // Add scroll event listener for animations
+  window.addEventListener('scroll', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+      
+      if (elementTop < window.innerHeight && elementBottom > 0) {
         element.classList.add('fade-in');
-        setTimeout(() => element.classList.remove('fade-in'), 500);
       }
-    }
-  }
+    });
+  });
 
-  // Typing animation for hero section
-  function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-      if (i < text.length) {
-        element.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, speed);
-      }
-    }
-    
-    type();
-  }
-
-  // Initialize typing animations
-  document.addEventListener('DOMContentLoaded', () => {
-    const titleElement = document.querySelector('.typing-text h1');
-    const subtitleElement = document.querySelector('.typing-text h2');
-    
-    // Add fade-in animations
-    const animateElements = () => {
-      const elements = document.querySelectorAll('.animate-on-scroll');
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        
-        if (elementTop < window.innerHeight && elementBottom > 0) {
-          element.classList.add('fade-in');
+  // Make sections expandable
+  document.querySelectorAll('.section').forEach(section => {
+    const header = section.querySelector('.section-header');
+    if (header) {
+      header.addEventListener('click', () => {
+        const content = section.querySelector('.section-content');
+        if (content) {
+          content.classList.toggle('expanded');
+          header.classList.toggle('expanded');
         }
       });
-    };
+    }
+  });
 
-    // Start typing animations
-    typeWriter(titleElement, 'Prerak Raja');
-    typeWriter(subtitleElement, 'Focused and enthusiastic developer with a keen interest in software development and artificial intelligence');
-    
-    // Add scroll event listener for animations
+  // Project cards hover effect
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-10px)';
+      card.style.transition = 'transform 0.3s ease';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0)';
+    });
+  });
+});
     window.addEventListener('scroll', animateElements);
     animateElements(); // Initial check
 
