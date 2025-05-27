@@ -4,6 +4,14 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+// Initialize AOS
+AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+});
+
 !(function($) {
   "use strict";
 
@@ -581,16 +589,92 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })(jQuery);
 
-    // Create modal function
-    function createModal(content) {
-      const modal = document.createElement('div');
-      modal.className = 'modal';
-      modal.innerHTML = `
-        <div class="modal-content">
-          <span class="modal-close">&times;</span>
-          ${content}
-        </div>
-      `;
+// Initialize all functions when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize animations
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.style.opacity = '0';
+  });
+
+  // Initialize typing animations
+  const heroText = document.querySelector('.hero-text');
+  if (heroText) {
+    typeWriter(heroText, 'Full Stack Developer', 100);
+  }
+
+  // Initialize AOS
+  aos_init();
+
+  // Mobile navigation
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
+    });
+  }
+
+  // Experience items
+  document.querySelectorAll('.experience-item').forEach(item => {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', () => {
+      const content = item.querySelector('.experience-content');
+      if (content) {
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+      }
+    });
+  });
+
+  // Education cards
+  document.querySelectorAll('.education-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      const content = card.innerHTML;
+      createModal(content);
+    });
+  });
+
+  // Back to top button
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
+
+// Create modal function
+function createModal(content) {
+  const modal = document.createElement('div');
+  modal.className = 'modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      ${content}
+    </div>
+  `;
       document.body.appendChild(modal);
       
       const closeBtn = modal.querySelector('.modal-close');
@@ -605,22 +689,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
+  }
 
-    // Make experience items expandable
-    document.querySelectorAll('.experience-item').forEach(item => {
-      item.style.cursor = 'pointer';
-      item.addEventListener('click', () => {
-        const content = item.innerHTML;
-        createModal(content);
-      });
+  // Back to top button
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
     });
 
-    // Make education cards expandable
-    document.querySelectorAll('.education-card').forEach(card => {
-      card.style.cursor = 'pointer';
-      card.addEventListener('click', () => {
-        const content = card.innerHTML;
-        createModal(content);
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
 
@@ -704,40 +789,9 @@ function createModal(content) {
   modal.className = 'modal';
   modal.innerHTML = `
     <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      ${content}
-    </div>
-  `;
-  document.body.appendChild(modal);
-  
-  const closeBtn = modal.querySelector('.modal-close');
-  closeBtn.addEventListener('click', () => {
-    modal.remove();
-  });
-
-  // Close modal when clicking outside
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.remove();
     }
-      }
-    });
   });
-
-  // Mobile navigation
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        navLinks.classList.remove('active');
+}
         hamburger.classList.remove('active');
       }
     });
