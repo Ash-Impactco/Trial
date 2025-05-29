@@ -37,6 +37,66 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        /* Landing page styles */
+        .landing-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #2C3E50, #34495E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #2C3E50, #34495E);
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
         /* Section animations */
         .section {
             opacity: 0;
@@ -81,6 +141,17 @@
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
         }
 
         .container {
