@@ -789,11 +789,94 @@ function createModal(content) {
   modal.className = 'modal';
   modal.innerHTML = `
     <div class="modal-content">
+      ${content}
+    </div>
+  });
+
+  // Close modal when clicking outside
+  window.addEventListener('click', (e) => {
+    if (modal && modal.contains(e.target)) {
+      modal.style.display = 'none';
     }
   });
-}
+
+  // Mobile menu toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (hamburger.classList.contains('active') && 
+          !hamburger.contains(e.target) && 
+          !navLinks.contains(e.target)) {
         hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
       }
     });
   }
-})(jQuery); 
+};
+
+// Initialize AOS
+AOS.init({
+  duration: 1000,
+  once: true,
+  offset: 100,
+  easing: 'ease-in-out'
+});
+
+// Initialize animations
+const sections = document.querySelectorAll('.section');
+sections.forEach(section => {
+  section.setAttribute('data-aos', 'fade-up');
+  section.setAttribute('data-aos-duration', '800');
+  section.setAttribute('data-aos-delay', '100');
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Back to top button
+const backToTop = document.querySelector('.back-to-top');
+if (backToTop) {
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('active');
+    } else {
+      backToTop.classList.remove('active');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+} 
