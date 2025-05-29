@@ -4,6 +4,14 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+// Initialize AOS
+AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+});
+
 !(function($) {
   "use strict";
 
@@ -581,16 +589,92 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })(jQuery);
 
-    // Create modal function
-    function createModal(content) {
-      const modal = document.createElement('div');
-      modal.className = 'modal';
-      modal.innerHTML = `
-        <div class="modal-content">
-          <span class="modal-close">&times;</span>
-          ${content}
-        </div>
-      `;
+// Initialize all functions when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize animations
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.style.opacity = '0';
+  });
+
+  // Initialize typing animations
+  const heroText = document.querySelector('.hero-text');
+  if (heroText) {
+    typeWriter(heroText, 'Full Stack Developer', 100);
+  }
+
+  // Initialize AOS
+  aos_init();
+
+  // Mobile navigation
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
+    });
+  }
+
+  // Experience items
+  document.querySelectorAll('.experience-item').forEach(item => {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', () => {
+      const content = item.querySelector('.experience-content');
+      if (content) {
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+      }
+    });
+  });
+
+  // Education cards
+  document.querySelectorAll('.education-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      const content = card.innerHTML;
+      createModal(content);
+    });
+  });
+
+  // Back to top button
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
+
+// Create modal function
+function createModal(content) {
+  const modal = document.createElement('div');
+  modal.className = 'modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      ${content}
+    </div>
+  `;
       document.body.appendChild(modal);
       
       const closeBtn = modal.querySelector('.modal-close');
@@ -605,22 +689,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
+  }
 
-    // Make experience items expandable
-    document.querySelectorAll('.experience-item').forEach(item => {
-      item.style.cursor = 'pointer';
-      item.addEventListener('click', () => {
-        const content = item.innerHTML;
-        createModal(content);
-      });
+  // Back to top button
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
     });
 
-    // Make education cards expandable
-    document.querySelectorAll('.education-card').forEach(card => {
-      card.style.cursor = 'pointer';
-      card.addEventListener('click', () => {
-        const content = card.innerHTML;
-        createModal(content);
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
 
@@ -704,42 +789,94 @@ function createModal(content) {
   modal.className = 'modal';
   modal.innerHTML = `
     <div class="modal-content">
-      <span class="modal-close">&times;</span>
       ${content}
     </div>
-  `;
-  document.body.appendChild(modal);
-  
-  const closeBtn = modal.querySelector('.modal-close');
-  closeBtn.addEventListener('click', () => {
-    modal.remove();
   });
 
   // Close modal when clicking outside
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.remove();
+  window.addEventListener('click', (e) => {
+    if (modal && modal.contains(e.target)) {
+      modal.style.display = 'none';
     }
-      }
-    });
   });
 
-  // Mobile navigation
+  // Mobile menu toggle
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
       hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
     });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        navLinks.classList.remove('active');
+      if (hamburger.classList.contains('active') && 
+          !hamburger.contains(e.target) && 
+          !navLinks.contains(e.target)) {
         hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
       }
     });
   }
-})(jQuery); 
+};
+
+// Initialize AOS
+AOS.init({
+  duration: 1000,
+  once: true,
+  offset: 100,
+  easing: 'ease-in-out'
+});
+
+// Initialize animations
+const sections = document.querySelectorAll('.section');
+sections.forEach(section => {
+  section.setAttribute('data-aos', 'fade-up');
+  section.setAttribute('data-aos-duration', '800');
+  section.setAttribute('data-aos-delay', '100');
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Back to top button
+const backToTop = document.querySelector('.back-to-top');
+if (backToTop) {
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('active');
+    } else {
+      backToTop.classList.remove('active');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+} 
