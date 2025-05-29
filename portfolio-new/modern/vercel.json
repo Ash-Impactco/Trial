@@ -2,22 +2,36 @@
   "version": 2,
   "builds": [
     {
+      "src": "landing.html",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "."
+      }
+    },
+    {
       "src": "index.html",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "."
       }
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/",
+      "dest": "/landing.html"
+    },
+    {
+      "src": "/portfolio",
       "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ],
   "env": {
-    "NODE_ENV": "production",
-    "VERCEL_ENV": "production"
+    "NODE_ENV": "production"
   },
   "rewrites": [
     {

@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "live-server",
-    "build": "echo 'No build step required'"
+    "build": "npm run copy-assets"
   },
   "dependencies": {
     "aos": "^2.3.4",
@@ -14,5 +14,19 @@
   },
   "devDependencies": {
     "live-server": "^1.2.2"
+  },
+  "vercel": {
+    "builds": [
+      {
+        "src": "index.html",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
   }
 }
