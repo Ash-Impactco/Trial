@@ -5,14 +5,20 @@
     --secondary-color: #34495E;
     --accent-color: #7F8C8D;
     --text-color: #333;
+    --background-color: #f8f9fa;
 }
 
-/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
     overflow-x: hidden;
 }
 
@@ -30,7 +36,7 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: all 0.3s ease;
+    padding: 1rem 2rem;
 }
 
 .navbar.scrolled {
@@ -62,11 +68,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .hero-content {
-    text-align: center;
     max-width: 800px;
+    padding: 0 2rem;
 }
 
 .hero h1 {
@@ -85,7 +92,7 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Button Styles */
+/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -114,9 +121,9 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Section Styles */
+/* Sections */
 .section {
-    padding: 8rem 0;
+    padding: 8rem 2rem;
     position: relative;
 }
 
@@ -136,7 +143,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* Card Styles */
+/* Cards */
 .card {
     background: white;
     padding: 2rem;
@@ -151,24 +158,6 @@ body {
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-/* Image Styles */
-.image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.image-container:hover img {
-    transform: scale(1.05);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
@@ -180,12 +169,6 @@ body {
     }
 
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: white;
         flex-direction: column;
         align-items: center;
         justify-content: center;
